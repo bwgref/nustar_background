@@ -1,0 +1,22 @@
+.settings
+full_mission/*
+full_mission
+*.tgz
+*checkpoint*
+*~
+
+### https://raw.github.com/github/gitignore/master/Global/OSX.gitignore
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+
+
