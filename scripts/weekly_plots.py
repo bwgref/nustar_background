@@ -6,10 +6,12 @@ import pandas as pd
 import glob
 from astropy.io.fits import getdata, getheader
 
+from geo2mag import geo2mag
+
 
 def show_map(map, exposure, thist, tbins):
     fig = plt.figure(figsize=(28, 12))
-    ax = fig.add_subplot(111, title='Counts')
+    ax = fig.add_subplot(211, title='Counts')
     plt.imshow(
                 map,
                 interpolation='nearest', origin='low',
@@ -19,15 +21,15 @@ def show_map(map, exposure, thist, tbins):
 #                norm=colors.LogNorm(vmin=1.0, vmax = 10.))
     plt.colorbar()
 
-#     ax = fig.add_subplot(312, title='imshow: square bins')
-# #     plt.show()
-# 
-#     plt.imshow(
-#                 exposure,
-#                 interpolation='nearest', origin='low',
-#                 cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
-#                 aspect=8,vmin=1.0, vmax =5.)
-#     plt.colorbar()
+    ax = fig.add_subplot(212, title='imshow: square bins')
+#     plt.show()
+
+    plt.imshow(
+                exposure,
+                interpolation='nearest', origin='low',
+                cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
+                aspect=8,vmin=1.0, vmax =5.)
+    plt.colorbar()
 #     
 #     ax = fig.add_subplot(312, title='Rate')
 # 
@@ -60,7 +62,7 @@ for ind, file in enumerate(glob.glob('../full_mission/*A_02*')):
 df = pd.DataFrame(dbase)
 df_sorted = df.sort_values(by='TSTART')
 
-interval = 7*86400. # Weekly
+interval = 38*86400. # Weekly
 reset_interval=1
 
 nlatbins = 90
@@ -71,8 +73,8 @@ timebin = 100. # seconds
 c=0
 for ind, row in df_sorted.iterrows():    
     c+=1
-    if(c<2650):
-        continue
+#     if(c<2650):
+#         continue
         
     file = row['FNAME']
     print(c, ind, file, row['DATE-OBS'])
@@ -81,12 +83,26 @@ for ind, row in df_sorted.iterrows():
     if(reset_interval == 1):
         tmin = evt['TIME'].min()
 
-    time_filter=( ((evt['TIME'] - tmin) < interval) & (evt['LIMB_ANGLE'] < -5) ).nonzero()
+    time_filter=( ((evt['TIME'] - tmin) < interval) &
+                   (evt['LIMB_ANGLE'] < -5)
+                ).nonzero()
+
+    incoords = np.array([evt['LAT'][time_filter],
+                         evt['LON'][time_filter] ])
+
+#    magcoords = geo2mag(incoords)
+    
 
     thismap, xedges, yedges = np.histogram2d(evt['LON'][time_filter],
-                             evt['LAT'][time_filter],
-                             range = [[0, 360], [-6.5, 6.5]],
-                             bins=[nlonbins, nlatbins])
+                                evt['LAT'][time_filter],
+                                range = [[0, 360], [-6.5, 6.5]],
+                                bins=[nlonbins, nlatbins])
+
+#     thismap, xedges, yedges = np.histogram2d(magcoords[1],
+#                              magcoords[0],
+#                              range = [[-180, 180], [-15, 15]],
+#                              bins=[nlonbins, nlatbins])
+
 
     thist, tedges = np.histogram(evt['TIME'][time_filter],
         range=[tmin, tmin+interval],
@@ -118,6 +134,7 @@ for ind, row in df_sorted.iterrows():
         plotexp[empty] = np.nan
 
         show_map(plotmap, plotexp, all_thist, tedges)
+ 
         reset_interval=1
 
 

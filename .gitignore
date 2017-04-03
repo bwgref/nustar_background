@@ -1,6 +1,9 @@
 .settings
 full_mission/*
 full_mission
+full_mission_shields/*
+full_mission_shields
+
 *.tgz
 *checkpoint*
 *~
