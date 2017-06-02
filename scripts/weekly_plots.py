@@ -77,7 +77,7 @@ for ind, file in enumerate(glob.glob('../full_mission/*A_02*')):
 df = pd.DataFrame(dbase)
 df_sorted = df.sort_values(by='TSTART')
 
-interval = 180*86400. # One orbital cycle
+interval = 38*86400. # One orbital cycle
 reset_interval=1.0
 
 nlatbins = 90
