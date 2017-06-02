@@ -7,29 +7,39 @@ import glob
 from astropy.io.fits import getdata, getheader
 
 from geo2mag import geo2mag
+import time
 
 
 def show_map(map, exposure, thist, tbins, ctr=0, savefig=None):
     fig = plt.figure(figsize=(28, 12))
-    ax = fig.add_subplot(211, title='Counts')
+    ax = fig.add_subplot(111, title='Count Rate Cycle {}'.format(ctr))
+#    plt.imshow(
+#                 map,
+#                 interpolation='nearest', origin='low',
+#                 cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
+#                 aspect=8,
+#                 vmin=1.0, vmax=20.)
+# #                norm=colors.LogNorm(vmin=1.0, vmax = 10.))
+#     plt.colorbar()
+# 
+#     ax = fig.add_subplot(212, title='imshow: square bins')
+# #     plt.show()
+# 
+#     plt.imshow(
+#                 exposure,
+#                 interpolation='nearest', origin='low',
+#                 cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
+#                 aspect=8,vmin=1.0, vmax =5.)
+#     plt.colorbar()
+    
     plt.imshow(
-                map,
-                interpolation='nearest', origin='low',
-                cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
-                aspect=8,
-                vmin=1.0, vmax=20.)
-#                norm=colors.LogNorm(vmin=1.0, vmax = 10.))
+            map/exposure,
+            interpolation='nearest', origin='low',
+            cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
+            aspect=8,
+            vmin=0.5, vmax=5.)
     plt.colorbar()
-
-    ax = fig.add_subplot(212, title='imshow: square bins')
-#     plt.show()
-
-    plt.imshow(
-                exposure,
-                interpolation='nearest', origin='low',
-                cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
-                aspect=8,vmin=1.0, vmax =5.)
-    plt.colorbar()
+    
 #     
 #     ax = fig.add_subplot(312, title='Rate')
 # 
@@ -40,8 +50,8 @@ def show_map(map, exposure, thist, tbins, ctr=0, savefig=None):
         outfile = "map{}.pdf".format(ctr)
         plt.savefig(outfile)
     plt.show(block=False)
-    input("Press Enter to continue...")
-
+#    input("Press Enter to continue...")
+#    time.sleep(2)
     plt.close(fig)
     
 
@@ -67,7 +77,7 @@ for ind, file in enumerate(glob.glob('../full_mission/*A_02*')):
 df = pd.DataFrame(dbase)
 df_sorted = df.sort_values(by='TSTART')
 
-interval = 38*86400. # One orbital cycle
+interval = 180*86400. # One orbital cycle
 reset_interval=1.0
 
 nlatbins = 90
@@ -76,6 +86,7 @@ timebin = 100. # seconds
 
 #for ind, file in enumerate(df_sorted['FNAME']):
 c=0
+frame=0
 for ind, row in df_sorted.iterrows():    
     c+=1
 #     if(c<2650):
@@ -108,10 +119,12 @@ for ind, row in df_sorted.iterrows():
 #                              range = [[-180, 180], [-15, 15]],
 #                              bins=[nlonbins, nlatbins])
 
+#    print(interval/timebin)
+#    print(int(interval/timebin))
 
     thist, tedges = np.histogram(evt['TIME'][time_filter],
         range=[tmin, tmin+interval],
-        bins = interval / timebin)
+        bins = int(interval / timebin))
 
     if(reset_interval == 1):
         tmin = evt['TIME'].min()
@@ -138,8 +151,8 @@ for ind, row in df_sorted.iterrows():
         plotmap[empty]=np.nan
         plotexp[empty] = np.nan
 
-        show_map(plotmap, plotexp, all_thist, tedges, ctr = c, savefig=True)
-        break
+        show_map(plotmap, plotexp, all_thist, tedges, ctr = frame, savefig=True)
+        frame+=1
         reset_interval=1
         
     
