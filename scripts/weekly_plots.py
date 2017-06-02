@@ -37,7 +37,7 @@ def show_map(map, exposure, thist, tbins, ctr=0, savefig=None):
             interpolation='nearest', origin='low',
             cmap=cm.jet, extent=[0, 360, -6.5, 6.5],
             aspect=8,
-            vmin=0.5, vmax=5.)
+            vmin=0.5, vmax=15.)
     plt.colorbar()
     
 #     
