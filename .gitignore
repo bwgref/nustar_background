@@ -3,6 +3,7 @@ full_mission/*
 full_mission
 full_mission_shields/*
 full_mission_shields
+scripts/extract_background/full_mission
 
 *.tgz
 *checkpoint*

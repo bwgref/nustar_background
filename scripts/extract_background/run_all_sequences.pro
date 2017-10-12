@@ -15,8 +15,12 @@ soc_seqid = file_basename(socn)
 FOR i = 0, n_elements(socn) - 1 DO BEGIN
 ;   print, i, ' of ', n_elements(socn) -1 
    ; Find the right socname:
+
+;   IF i LT 1000 THEN continue
+
    IF strmid(soc_seqid[i], 0, 1) EQ '0' OR $
-      strmid(soc_seqid[i], 0, 1) EQ '2' THEN BEGIN
+      strmid(soc_seqid[i], 0, 1) EQ '2' OR $
+      strmid(soc_seqid[i], 0, 1) EQ '1' THEN BEGIN
       print, 'Skipping '+soc_seqid[i]
       CONTINUE
    ENDIF
@@ -27,8 +31,9 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
       CONTINUE
    ENDIF
 
-;;   this_one = where(soc_seqid EQ seqids[i], found)
-;;   IF ~found THEN stop
+   
+;  this_one = where(soc_seqid EQ seqids[i], found)
+;  IF ~found THEN stop
 
 
    datpath = socn[i]
@@ -37,7 +42,6 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
 ;   break
    extract_events, datpath, outdir = outdir, err = err
 
-    break
 
 ENDFOR
 
