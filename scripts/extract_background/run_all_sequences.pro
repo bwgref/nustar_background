@@ -16,7 +16,7 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
 ;   print, i, ' of ', n_elements(socn) -1 
    ; Find the right socname:
 
-;   IF i LT 1000 THEN continue
+;;   IF i LT 1201 THEN continue
 
    IF strmid(soc_seqid[i], 0, 1) EQ '0' OR $
       strmid(soc_seqid[i], 0, 1) EQ '2' OR $

@@ -9,10 +9,10 @@ record = {exp:fltarr(2), tstart:0.d, $
 
 
 ; Set the fields that you want to extract here:
-ev_stub = {TIME:-999d, DET_ID:-1, PI:0., RAWX:-1, RAWY:-1, $
+ev_stub = {TIME:-999d, DET_ID:-1, PHAS:fltarr(9), RAWX:-1, RAWY:-1, $
            DEPTHFLAG:0, GRADE:0, GEOMAG:-999., SUNSHINE:-1, $
            ram_angle:-999., lat:-999., lon:-999., alt:-999., $
-           limb_angle:-999., SURRPI:0., TEMP:-10.}
+           limb_angle:-999., SURRPI:0., TEMP:-10., PI:-999}
 
 ; Depth cut flag for status cut below
 depth_cut=128B
@@ -23,6 +23,10 @@ FOR iab = 0, 1 DO BEGIN
 
    evtfile = datpath+'nu'+seqid+ab[iab]+'_uf.evt'
    f = file_info(evtfile)
+   IF ~f.exists THEN CONTINUE
+
+   testfile = datpath+'nu'+seqid+ab[iab]+'02_cl.evt'
+   f = file_info(testfile)
    IF ~f.exists THEN CONTINUE
 
 
@@ -61,17 +65,19 @@ FOR iab = 0, 1 DO BEGIN
 
 
     ; Load in housekeeping data
-    hkdata = mrdfits(hkfile, 'HK1FPM', /silent)
-    hk4data = mrdfits(hkfile, 'HK4FPM', /silent)
+   hkdata = mrdfits(hkfile, 'HK1FPM', /silent)
+   hk4data = mrdfits(hkfile, 'HK4FPM', /silent)
     
     ; Load in GTI data
-    gtis = mrdfits(gtifile, 1, /silent)
-
-    ; Filter on GTIs:
-    print, 'Filtering events...'
-    evt = filter_nustar(ufevt, hkdata, gti=gtis)
-    nevt = n_elements(evt) 
+   gtis = mrdfits(gtifile, 1, /silent)
    
+    ; Filter on GTIs:
+   print, 'Filtering events...'
+   evt = filter_nustar(ufevt, hkdata, gti=gtis, err = err)
+   IF err THEN CONTINUE
+   
+    nevt = n_elements(evt) 
+    
    ; Get event data:
     new_evt = replicate(ev_stub, nevt) 
     new_evt.time = evt.time
@@ -80,8 +86,9 @@ FOR iab = 0, 1 DO BEGIN
     new_evt.rawx = evt.rawx
     new_evt.rawy = evt.rawy
     new_evt.depthflag = (evt.status[1] EQ depth_cut)
-    new_evt.pi = evt.pi_clc
+    new_evt.phas = evt.phas
     new_evt.surrpi = evt.surrpi
+    new_evt.pi = evt.pi
     
 ;;    IF nevt GT 1000 THEN stop
 
@@ -102,7 +109,8 @@ FOR iab = 0, 1 DO BEGIN
 ;    new_evt.temp = interpol(hkdata.
     temps = fltarr(4, n_elements(hk4data)) 
     FOR det = 0, 3 DO begin
-       thisdet = where(new_evt.det_id EQ det)
+       thisdet = where(new_evt.det_id EQ det, ndet)
+       IF ndet EQ 0 THEN continue
        new_evt[thisdet].temp = interpol(hk4data.(10+det), hk4data.time, new_evt[thisdet].time)
     ENDFOR
 
@@ -134,8 +142,6 @@ ENDFOR
 
 
 END
-
-
 
 
 
