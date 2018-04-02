@@ -80,8 +80,8 @@ FOR iab = 0, 1 DO BEGIN
    evt = filter_nustar(ufevt, hkdata, gti=gtis, err = err)
    IF err THEN CONTINUE
    
-   nevt = n_elements(evt) 
-   
+   nevt = n_elements(evt)
+
                                 ; Get event data:
    new_evt = replicate(ev_stub, nevt) 
    new_evt.time = evt.time
