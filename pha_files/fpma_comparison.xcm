@@ -2,7 +2,7 @@ statistic cstat
 data 1:1 year0_det0_FPMA.pha
 response  2:1 diag.rmf
 
-data 2:2 year4_det0_FPMA.pha
+data 2:2 year5_det0_FPMA.pha
 response  2:2 diag.rmf
 ignore 1:1-2460,3710-4096 2:1-2460,3710-4096
 gain fit 1:2
