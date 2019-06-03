@@ -1,4 +1,4 @@
-PRO setup_links_nupipe
+PRO run_nupipe
 
 ;;infile = 'filtered_seqids.sav'
 ;;restore, infile
@@ -41,25 +41,54 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
 
 
    datpath = socn[i]
-   
-   print, 'Loading ', datpath
+  
 
 
    ;; Make the temporary softlink:
    seqid = file_basename(datpath)
 
-   file_mkdir, outdir+'/'+seqid
-   f = file_test(outdir+'/'+seqid+'/'+seqid)
-   IF ~f THEN BEGIN
-      print, 'Setting up link: '+seqid
-      spawn, 'ln -s '+datpath+' '+outdir+'/'+seqid+'/'+seqid
-   ENDIF
+   ;; file_mkdir, outdir+'/'+seqid
+   ;; f = file_test(outdir+'/'+seqid+'/'+seqid)
+   ;; IF ~f THEN BEGIN
+   ;;    print, 'Setting up link: '+seqid
+   ;;    spawn, 'ln -s '+datpath+' '+outdir+'/'+seqid+'/'+seqid
+   ;; ENDIF
    
    ; Check to see if you need to run nupipeine:
 
-;   f = file_test(outdir+'/'+seqid+'/nu'+seqid+'A02_cl.evt')
-;   IF ~f THEN $
-;      spawn, './run_nupipeline.sh '+seqid
+   data_dir = outdir+'/'+seqid+'/'+seqid
+   uf_test = data_dir+'/event_uf/nu'+seqid+'A_uf.evt'
+   uf = file_test(uf_test)
+
+   IF ~uf THEN begin
+      print, 'Bad softlink?'
+      print, uf_test
+      CONTINUE
+
+   ENDIF
+   cl_test = outdir+'/'+seqid+'/nu'+seqid+'A02_cl.evt'
+
+   f = file_test(cl_test)
+   IF f THEN BEGIN
+      print, 'File exists '+cl_test
+      CONTINUE
+   ENDIF
+
+   log_test = outdir+'/'+seqid+'/nu'+seqid+'.log'
+   logf = file_test(log_test)
+   IF logf THEN BEGIN
+      print, 'Log file exists '+log_test
+      continue
+   ENDIF
+   
+
+
+   
+
+   print, 'Running: '+cl_test
+   spawn, './run_nupipeline.sh '+seqid
+;  IF ~f THEN $
+
  
    
    ; Extract the events

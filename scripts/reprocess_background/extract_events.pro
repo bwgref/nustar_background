@@ -41,8 +41,11 @@ FOR iab = 0, 1 DO BEGIN
    evtfile = datpath+'nu'+seqid+ab[iab]+'_uf.evt'
    f = file_info(evtfile)
    IF ~f.exists THEN BEGIN
-      print, 'Calibrating file: '+seqid
-      spawn,'./run_nucalcpi.sh '+seqid
+      print, 'Missing UF file, skipping...'
+      print,  evtfile
+;      print, 'Calibrating file: '+seqid
+;      spawn,'./run_nucalcpi.sh '+seqid
+      continue
    ENDIF
 
 

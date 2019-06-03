@@ -26,6 +26,7 @@ cmd="nupipeline \
       steminputs=nu${OBSID} \
       inmastaspectfile=$mastfile runmetrology=no \
       inpsdfilecor=$psdcorfile \
+      clobber=yes \
       outdir=${OUTDIR}"
 
 echo $cmd
