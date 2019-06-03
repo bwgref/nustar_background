@@ -1,3 +1,8 @@
+
+#
+
+Use extract_new_events.sh to do the stuff below.
+
 Set up links using setup_links_nupipe.pro
 
 setup_links_nupipe.pro
