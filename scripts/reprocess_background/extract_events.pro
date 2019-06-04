@@ -26,25 +26,11 @@ FOR iab = 0, 1 DO BEGIN
       CONTINUE
    ENDIF
 
-   ; Check to see if the event_cl directory exists:
-   f = file_test(datpath+seqid+'/event_cl/', /directory)
-   IF ~f THEN BEGIN
-      print, 'event_cl missing in fltops'
-      print, datpath+seqid+'/event_cl'
-
-      CONTINUE
-   ENDIF
-
-
-
-
-   evtfile = datpath+'nu'+seqid+ab[iab]+'_uf.evt'
+   evtfile = datpath+'/nu'+seqid+ab[iab]+'02_cl.evt'
    f = file_info(evtfile)
    IF ~f.exists THEN BEGIN
-      print, 'Missing UF file, skipping...'
+      print, 'Missing input file, skipping...'
       print,  evtfile
-;      print, 'Calibrating file: '+seqid
-;      spawn,'./run_nucalcpi.sh '+seqid
       continue
    ENDIF
 
@@ -52,7 +38,8 @@ FOR iab = 0, 1 DO BEGIN
    err = 0
 
    print, 'Extracting: ', evtfile
-   
+
+   ; Files from fltops:
    hkfile = datpath+seqid+'/hk/nu'+seqid+ab[iab]+'_fpm.hk'
    gtifile = datpath+seqid+'/event_cl/nu'+seqid+ab[iab]+'02_gti.fits'
    
@@ -67,8 +54,8 @@ FOR iab = 0, 1 DO BEGIN
    exp = float(fxpar(inhead, 'EXPOSURE'))
 
 
-    ; Load in unfiltered events
-   ufevt = mrdfits(evtfile, 'EVENTS', /silent, /unsigned)
+   ; Load in the unfiltered events
+   evt = mrdfits(evtfile, 'EVENTS', /silent, /unsigned)
 
 
     ; Load in housekeeping data
@@ -78,10 +65,12 @@ FOR iab = 0, 1 DO BEGIN
     ; Load in GTI data
    gtis = mrdfits(gtifile, 1, /silent)
    
+
+   ; Don't have to do this any more...
     ; Filter on GTIs:
-   print, 'Filtering events...'
-   evt = filter_nustar(ufevt, hkdata, gti=gtis, err = err)
-   IF err THEN CONTINUE
+;   print, 'Filtering events...'
+;   evt = filter_nustar(ufevt, hkdata, gti=gtis, err = err)
+;   IF err THEN CONTINUE
    
    nevt = n_elements(evt)
 

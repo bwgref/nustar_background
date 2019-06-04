@@ -33,11 +33,13 @@ do
     cmd="nuscreen obsmode=OCCULTATION \
      infile=$outfile \
      gtiscreen=yes evtscreen=yes gtiexpr=DEFAULT \
-     gradeexpr=DEFAULT statusexpr=DEFAULT createattgti=yes \
+     gradeexpr=DEFAULT statusexpr=none \
+     createattgti=yes \
      createinstrgti=yes \
      outdir=$OUTDIR \
      hkfile=$hkfile \
      mkffile=$mkfile \
+     cleancols=no \
      outfile=DEFAULT clobber=yes"
 
     echo $cmd
@@ -49,7 +51,7 @@ do
 
     # Cleanup
     rm $outfile
-    
+
 done
 
 

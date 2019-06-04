@@ -87,19 +87,6 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
 
    print, 'Running: '+cl_test
    spawn, './run_nupipeline.sh '+seqid
-;  IF ~f THEN $
-
- 
-   
-   ; Extract the events
-;   extract_events, seqid
-
-
-
-   
-                                ; Cleanup files
-;   spawn, 'rm '+outdir+'/'+seqid+'/nu*uf.evt'
-
 
 ENDFOR
 

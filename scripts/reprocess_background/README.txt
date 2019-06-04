@@ -3,12 +3,8 @@
 
 Use extract_new_events.sh to do the stuff below.
 
-Set up links using setup_links_nupipe.pro
-
-setup_links_nupipe.pro
-run_nupipe.pro
+setup_links_nucalcpi.pro
+run_nucalcpi.pro
 run_extract_events.pro
 
 # Then go to ../../notebooks and make a python script to extract the events and make the PHA files.
-
-

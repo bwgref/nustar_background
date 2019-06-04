@@ -36,17 +36,24 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
    ENDIF
 
    
-;  this_one = where(soc_seqid EQ seqids[i], found)
-;  IF ~found THEN stop
-
 
    datpath = socn[i]
-   
-   print, 'Loading ', datpath
+
+   ; Check to see if an nu*A02_cl.evt file exists
 
 
-   ;; Make the temporary softlink:
+
    seqid = file_basename(datpath)
+
+
+   f = file_test(datpath+'/event_cl/nu'+seqid+'A02_cl.evt')
+   IF ~f THEN BEGIN
+      print, 'No 02 file for: ', datpath
+      continue
+   ENDIF
+
+   ;; Make the temporary softlink:   
+   print, 'Setting up softlinks for ', datpath
 
    file_mkdir, outdir+'/'+seqid
    f = file_test(outdir+'/'+seqid+'/'+seqid)
@@ -55,22 +62,6 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
       spawn, 'ln -s '+datpath+' '+outdir+'/'+seqid+'/'+seqid
    ENDIF
    
-   ; Check to see if you need to run nupipeine:
-
-;   f = file_test(outdir+'/'+seqid+'/nu'+seqid+'A02_cl.evt')
-;   IF ~f THEN $
-;      spawn, './run_nupipeline.sh '+seqid
- 
-   
-   ; Extract the events
-;   extract_events, seqid
-
-
-
-   
-                                ; Cleanup files
-;   spawn, 'rm '+outdir+'/'+seqid+'/nu*uf.evt'
-
 
 ENDFOR
 
