@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $NUSTARSETUP
+source ~/SOC_setup_FLT.sh
 
 # The sequence ID
 OBSID=$1

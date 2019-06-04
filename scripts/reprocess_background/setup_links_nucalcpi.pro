@@ -16,7 +16,7 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
    IF strmid(soc_seqid[i], 0, 1) EQ '0' OR $
       strmid(soc_seqid[i], 0, 1) EQ '2' OR $
       strmid(soc_seqid[i], 0, 1) EQ '1' THEN BEGIN
-      print, 'Skipping '+soc_seqid[i]
+;      print, 'Skipping '+soc_seqid[i]
       CONTINUE
    ENDIF
    
@@ -26,7 +26,7 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
       stregex(soc_seqid[i], 'fail', /boolean) OR $
       stregex(soc_seqid[i], 'orig', /boolean) OR $
       stregex(soc_seqid[i], 'pre', /boolean) THEN BEGIN
-      print, 'Skipping '+soc_seqid[i]
+;      print, 'Skipping '+soc_seqid[i]
       CONTINUE
    ENDIF
 
@@ -38,7 +38,7 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
    seqid = file_basename(datpath)
    f = file_test(datpath+'/event_cl/nu'+seqid+'A02_cl.evt')
    IF ~f THEN BEGIN
-      print, 'No 02 file for: ', datpath
+;      print, 'No 02 file for: ', datpath
       continue
    ENDIF
 
