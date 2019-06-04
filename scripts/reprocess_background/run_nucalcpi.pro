@@ -1,8 +1,5 @@
 PRO run_nucalcpi
 
-;;infile = 'filtered_seqids.sav'
-;;restore, infile
-
 base = './full_mission'
 
 socn = file_search(base+'/*', /test_directory)

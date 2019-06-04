@@ -22,15 +22,15 @@ FOR iab = 0, 1 DO BEGIN
    outfits = datpath+'/'+seqid+ab[iab]+'_02.fits'
    f = file_info(outfits)
    IF f.exists THEN BEGIN
-      print, outfits+' exists, skipping'
+;      print, outfits+' exists, skipping'
       CONTINUE
    ENDIF
 
    evtfile = datpath+'/nu'+seqid+ab[iab]+'02_cl.evt'
    f = file_info(evtfile)
    IF ~f.exists THEN BEGIN
-      print, 'Missing input file, skipping...'
-      print,  evtfile
+;      print, 'Missing input file, skipping...'
+;      print,  evtfile
       continue
    ENDIF
 
