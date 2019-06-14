@@ -8,6 +8,9 @@ OBSID=$1
 INDIR=full_mission/${OBSID}/${OBSID}
 OUTDIR=full_mission/${OBSID}
 
+# Default, but turn off depth cut for diagnostics.
+type="STATUS==b00000000xx0xx000"
+
 for MOD in A B
 do
 
