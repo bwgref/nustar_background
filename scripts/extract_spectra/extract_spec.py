@@ -23,12 +23,12 @@ def read_spec(infile, det_id=0):
               (evdata['DET_ID']==det_id) &
               (evdata['LIMB_ANGLE'] < -2) &
               (evdata['DEPTHFLAG']==0) )
-              inds = filter.nonzero()
-              
-              ehist, edges = np.histogram(evdata['PI'][inds[0]],
-                                          range = [0, 4096],
-                                          bins=4096)
-              return ehist, edges
+    inds = filter.nonzero()
+
+    ehist, edges = np.histogram(evdata['PI'][inds[0]],
+                              range = [0, 4096],
+                              bins=4096)
+    return ehist, edges
 
 def load_data(mod='A', det_id = 0):
     # Returns the full mission data unbinned spectrum
