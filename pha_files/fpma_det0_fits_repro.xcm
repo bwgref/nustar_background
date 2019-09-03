@@ -1,0 +1,115 @@
+statistic cstat5
+data 1:1 year0_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+
+ignore *:1-2460,3710-4096
+
+statistic cstat
+method leven 1000 0.01
+abund angr
+xsect bcmc
+cosmo 70 0 0.73
+xset delta 0.01
+systematic 0
+model  gaussian     +     gaussian     +     gaussian    
+        144.637       0.05          0          0      1e+06      1e+06
+       0.1            -0.1          0          0         10         20
+     0.00172598       0.01          0          0      1e+20      1e+24
+        122.085       0.05          0          0      1e+06      1e+06
+            0.1       -0.1          0          0         10         20
+     0.00016132       0.01          0          0      1e+20      1e+24
+        105.336       0.05          0          0      1e+06      1e+06
+       0.1            -0.1          0          0         10         20
+    0.000440192       0.01          0          0      1e+20      1e+24
+
+model  2:cont bknpower
+      -0.122714       0.01         -3         -2          9         10
+            124       -0.1          0       0.01      1e+06      1e+06
+      -0.765025       0.01         -3         -2          9         10
+    0.000205908       0.01          0          0      1e+20      1e+24
+     -0.0382368       0.01         -3         -2          9         10
+            124       -0.1          0       0.01      1e+06      1e+06
+      -0.432506       0.01         -3         -2          9         10
+    0.000333955       0.01          0          0      1e+20      1e+24
+
+fit 1000
+
+error 1
+error 4
+error 7
+
+
+set fptr1 [open fpma_det0_line1_repro.txt w+] 
+set fptr2 [open fpma_det0_line2_repro.txt w+] 
+set fptr3 [open fpma_det0_line3_repro.txt w+] 
+
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+data 1:1 year1_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+
+data 1:1 year2_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+data 1:1 year3_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+data 1:1 year4_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+data 1:1 year5_det0_FPMA_repro.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+close $fptr1
+close $fptr2
+close $fptr3
+
+

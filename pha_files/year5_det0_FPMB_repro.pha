@@ -1,0 +1,451 @@
+SIMPLE  =                    T / conforms to FITS standard                      BITPIX  =                  -32 / array data type                                NAXIS   =                    2 / number of array dimensions                     NAXIS1  =                   36                                                  NAXIS2  =                   37                                                  COMMENT   FITS (Flexible Image Transport System) format is defined in 'AstronomyCOMMENT   and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H TELESCOP= 'NuSTAR  '           / Telescope (mission) name                       INSTRUME= 'FPMA    '           / Instrument name                                OBS_ID  = '30001039002'        / Observation ID                                 TARG_ID =                    0 / Target ID                                      OBJECT  = 'LMC_X1  '           / Name of observed object                        RA_OBJ  =          84.91182917 / [deg] R.A. Object                              DEC_OBJ =          -69.7432389 / [deg] Dec Object                               RA_NOM  =              87.0375 / [deg] R.A. Nominal                             DEC_NOM =             -69.4695 / [deg] Dec Nominal                              RA_PNT  =              84.8932 / [deg] RA pointing                              DEC_PNT =             -69.6888 / [deg] Dec pointing                             PA_PNT  =             115.1983 / [deg] Position angle (roll)                    EQUINOX =            2.000E+03 / Equinox of celestial coord system              RADECSYS= 'FK5     '           / celestial coord system                         TASSIGN = 'SATELLITE'          / Time assigned by onboard clock                 TIMESYS = 'TT      '           / time measured from                             MJDREFI =                55197 / MJD reference day                              MJDREFF = 7.660185200000000E-04 / MJD reference (fraction of day)               TIMEREF = 'LOCAL   '           / reference time                                 CLOCKAPP=                    F / TRUE if timestamps corrected by gnd sware      COMMENT MJDREFI+MJDREFF = epoch of Jan 1, 2010, in TT time system.              TIMEUNIT= 's       '           / unit for time keywords                         TSTART  = 1.451970090000000E+08 / time start                                    TSTOP   = 1.452478984249942E+08 / time stop                                     TELAPSE = 5.088942499417067E+04 / elapsed time                                  DATE-OBS= '2014-08-08T12:31:07' / Start date of observations                    DATE-END= '2014-08-09T02:41:07' / End date of observations                      ORIGIN  = 'NASA/GSFC'          / origin of fits file                            CREATOR = 'extractor v5.25'    / Extractor                                      DATETLM = '2015-06-13T03:47:09' / L1 file creation date (UTC)                   TLM2FITS= '$Id: L1_events_write.pl 4997 2012-07-23 17:26:04Z adavis $' / L1 SoftSOFTVER = 'Hea_08Feb2016_V6.18_nustardas_09Jun15_v1.5.1' / HEASoft/NuSTAR softwaCALDBVER= '20160315'           / CALDB index version                            DATE    = '2016-06-23T00:19:07' / file creation date (YYYY-MM-DDThh:mm:ss UT)   DATAMODE= 'NONE    '           / Datamode                                       ONTIME  = 4.337795409774780E+04 / On-source time                                EXPOSURE= 3.997655040818080E+04 / Exposure time                                 LIVETIME= 3.997655040818080E+04 / Deadtime corrected on-source time             MJD-OBS = 5.687752170351852E+04 / MJD of data start time                        USER    = 'bwgref  '           / User name of creator                           FILIN001= 'lnk-nu30001039002A01_cl.evt' / Input file name                       TIMEZERO= 0.000000000000000E+00 / Time Zero                                     HISTORY                                                                         HISTORY START PARAMETER list for nuscreen_0.1.9 at 2016-06-22T16:13:57          HISTORY P1 INFILE = ./30001039002/event_cl/nu30001039002A_uf.evt                HISTORY P2 GTISCREEN = yes                                                      HISTORY P3 EVTSCREEN = yes                                                      HISTORY P4 GTIEXPR = "(ELV>3&&SAA_A==0&&SAA_B==0&&SW_SAA==0&&SW_TENTACLE==0&&SLEHISTORY P4 W==0&&SOURCE==1&&RESIDUAL<7)&&(CAL0STAT==0&&LIVETIME>0)&&(METGRID_FLAHISTORY P4 G==0||METGRID_FLAG==2)"                                              HISTORY P5 GRADEEXPR = "0-26"                                                   HISTORY P6 STATUSEXPR = "STATUS==b000000000x0xx000&&SHIELD==0"                  HISTORY P7 CREATEATTGTI = yes                                                   HISTORY P8 CREATEINSTRGTI = yes                                                 HISTORY P9 OUTDIR = ./30001039002/event_cl                                      HISTORY P10 OBSMODE = SCIENCE                                                   HISTORY P11 HKFILE = 30001039002/hk/nu30001039002A_fpm.hk.gz                    HISTORY P12 MKFFILE = ./30001039002/event_cl/nu30001039002A.mkf                 HISTORY P13 USRGTIFILE = NONE                                                   HISTORY P14 HKRANGEFILE = CALDB                                                 HISTORY P15 EVTRANGEFILE = CALDB                                                HISTORY P16 DEPTHCUT = NOMINAL                                                  HISTORY P17 TIMECOL = TIME                                                      HISTORY P18 GTIEXT = GTI                                                        HISTORY P19 GTIFILE = ./30001039002/event_cl/nu30001039002A01_gti.fits          HISTORY P20 OUTFILE = ./30001039002/event_cl/nu30001039002A01_cl.evt            HISTORY P21 CLEANCOLS = no                                                      HISTORY P22 CLEANUP = yes                                                       HISTORY P23 CLOBBER = yes                                                       HISTORY P24 CHATTER = 3                                                         HISTORY P25 HISTORY = yes                                                       HISTORY P26 MODE = ql                                                           HISTORY END PARAMETER list for nuscreen_0.1.9                                   DEADC   =       9.21586812E-01 / Deadtime correction                            DEADAPP =                    F / Has DEADC been applied to data                 COMMENT = 'The value in TIME combines the packet timestamp with the             COMMENT subseconds d                                                            COMMENT = 'PREPHAS is the sum of six pre-trigger pulse-height samples'          COMMENT = 'POSTPHAS is the sum of six post-trigger pulse-height samples'        COMMENT = 'Pixel order in PREPHAS and POSTPHAS: row-by-row, starting at         COMMENT upper-le                                                                COMMENT = 'If central-pixel is on-edge, off-detector pixels are zero-filled.'   HDUCLASS= 'ogip    '           / Format conforms to OGIP/GSFC conventions       HDUCLAS1= 'IMAGE   '           / Extension contains an image                    HDUCLAS2= 'WMAP    '           / Extension contains a weighted map              RA_OBJ  =  8.4911829170000E+01 / [deg] R.A. Object                              DEC_OBJ = -6.9743238900000E+01 / [deg] Dec Object                               RA_NOM  =         8.491183E+01 / R. A. of nominal aspect point                  DEC_NOM =        -6.974324E+01 / Dec. of nominal aspect point                   RA_PNT  =  8.4893200000000E+01 / [deg] RA pointing                              DEC_PNT = -6.9688800000000E+01 / [deg] Dec pointing                             PA_PNT  =  1.1519830000000E+02 / [deg] Position angle (roll)                    HISTORY TASK: FSORT on FILENAME:                                                HISTORY /home/nustar1/nustarops/fltops_repro/30001039_L                         HISTORY MC_X1/30                                                                HISTORY fsort3.1f at 2015-06-13T03:48:15                                        TSORTKEY= 'TIME    '                                                            HISTORY File modified by 'nuflagbad_0.1.6' (nustardas_28May14_v1.4.1) at        HISTORY 2015-06-13T03:50:01                                                     HISTORY Added STATUS column                                                     HISTORY Added BADPOS column                                                     HISTORY Used following file(s) to get bad pixels:                               HISTORY CALDB CALDB bad pixels file                                             HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1/30001039002/hk/nu  HISTORY 30001039002A_dspx.fits on-board bad pixels map                          NUFLAG  =                    T / Are events flagged (T/F)?                      COMMENT Events STATUS flags                                                     COMMENT b0000000000000000 Good event                                            COMMENT b0000000000000001 Event falls in a bad pixel from on-ground CALDB Bad   COMMENT Pi                                                                      COMMENT xel File                                                                COMMENT b0000000000000010 Event falls in a on-board disabled pixel              COMMENT b0000000000000100 Event falls in a user bad pixel file                  COMMENT b0000000000001000 Event has a neighbor bad from bad/disabled pixels     COMMENT list                                                                    COMMENT b0000000000010000 Event falls in a pixel on a detector edge             COMMENT b0000000000100000 Event falls in a hot/flickering pixel                 COMMENT b0000000001000000 Event has a neighbor hot/flickering pixel             COMMENT b0000000010000000 Event fails depth cut                                 HISTORY START PARAMETER list for nuflagbad_0.1.6 at 2015-06-13T03:50:02         HISTORY P1 INFILE =                                                             HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1/3000103            HISTORY P1 9002/event_cl/nu30001039002A_uf.evt                                  HISTORY P2 OUTFILE =                                                            HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1/300010             HISTORY P2 39002/event_cl/nu30001039002A_uf.31137tmp                            HISTORY P3 DISPIXFILE =                                                         HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1/300                HISTORY P3 01039002/hk/nu30001039002A_dspx.fits                                 HISTORY P4 BPFILE = CALDB                                                       HISTORY P5 USERBPFILE = NONE                                                    HISTORY P6 OUTBPFILE =                                                          HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1/3000               HISTORY P6 1039002/event_cl/nu30001039002A_bp.fits                              HISTORY P7 CLOBBER = yes                                                        HISTORY P8 HISTORY = yes                                                        HISTORY P9 CHATTER = 3                                                          HISTORY P10 MODE = ql                                                           HISTORY END PARAMETER list for nuflagbad_0.1.6                                  HISTORY File modified by 'nuhotpix_0.1.5' (nustardas_28May14_v1.4.1) at         HISTORY 2015-06-13T03:50:05                                                     HISTORY Added HOTPOS column                                                     HISTORY START PARAMETER list for nuhotpix_0.1.5 at 2015-06-13T03:50:05          HISTORY P3 OUTHPFILE =                                                          HISTORY P3 1039002/event_cl/nu30001039002A_hp.fits                              HISTORY P4 BINSIZE = 600                                                        HISTORY P5 CELLSIZE = 5                                                         HISTORY P6 IMPFAC = 1.0                                                         HISTORY P7 LOGPOS = -6                                                          HISTORY P8 BTHRESH = 6                                                          HISTORY P9 CLEANFLICK = yes                                                     HISTORY P10 ITERATE = yes                                                       HISTORY P11 CLOBBER = yes                                                       HISTORY P12 HISTORY = yes                                                       HISTORY P13 CHATTER = 3                                                         HISTORY P14 MODE = ql                                                           HISTORY END PARAMETER list for nuhotpix_0.1.5                                   HISTORY File modified by 'nucalcpha_0.2.1' (nustardas_28May14_v1.4.1) at        HISTORY 2015-06-13T03:50:08: computed PHA.                                      HISTORY START PARAMETER list for nucalcpha_0.2.1 at 2015-06-13T03:50:09         HISTORY P3 OFFSETFILE = CALDB                                                   HISTORY P4 GRADEFILE = CALDB                                                    HISTORY P5 PHAPARFILE = CALDB                                                   HISTORY P6 EVTTHR = 55                                                          HISTORY P7 TIMERISE = 0.0016                                                    HISTORY P8 CLEANCOLS = no                                                       HISTORY P9 CLOBBER = yes                                                        HISTORY P10 HISTORY = yes                                                       HISTORY P11 CHATTER = 3                                                         HISTORY P12 MODE = ql                                                           HISTORY END PARAMETER list for nucalcpha_0.2.1                                  HISTORY File modified by 'nucalcpi_0.2.1' (nustardas_28May14_v1.4.1) at         HISTORY 2015-06-13T03:50:14: computed PI.                                       HISTORY START PARAMETER list for nucalcpi_0.2.1 at 2015-06-13T03:50:17          HISTORY P3 HKFILE =                                                             HISTORY P3 9002/hk/nu30001039002A_fpm.hk                                        HISTORY P4 TEMPERATURE = 5                                                      HISTORY P5 GAINFILE = CALDB                                                     HISTORY P6 CLCFILE = CALDB                                                      HISTORY P7 CLCFILTERFILE = CALDB                                                HISTORY P8 CLOBBER = yes                                                        HISTORY P9 HISTORY = yes                                                        HISTORY P10 CHATTER = 3                                                         HISTORY P11 MODE = ql                                                           HISTORY END PARAMETER list for nucalcpi_0.2.1                                   HISTORY File modified by 'nuflagevt_0.1.3' (nustardas_28May14_v1.4.1) at        HISTORY 2015-06-13T03:50:29: computed PHA.                                      HISTORY START PARAMETER list for nuflagevt_0.1.3 at 2015-06-13T03:50:31         HISTORY P3 DEPTHCUTFILE = CALDB                                                 HISTORY P4 EVTCUTFILE = CALDB                                                   HISTORY P5 CLOBBER = yes                                                        HISTORY P6 HISTORY = yes                                                        HISTORY P7 CHATTER = 3                                                          HISTORY P8 MODE = ql                                                            HISTORY END PARAMETER list for nuflagevt_0.1.3                                  HISTORY File modified by 'nucalcpos_0.2.3' (nustardas_28May14_v1.4.1) at        HISTORY 2015-06-13T03:50:41.                                                    HISTORY START PARAMETER list for nucalcpos_0.2.3 at 2015-06-13T03:50:45         HISTORY P1 INFILE = 31404_tmp_nucoord/nu30001039002A_uf.31137tmp                HISTORY P2 OUTFILE = 31404_tmp_nucoord/nu30001039002A_uf.31404tmp               HISTORY P3 PIXPOSFILE = CALDB                                                   HISTORY P4 SAVERAW2COORD = no                                                   HISTORY P5 INITSEED = no                                                        HISTORY P6 ALIGNFILE =                                                          HISTORY /home/nustar1/SOC/CALDB/data/nustar/fpm/bcf/align/nuCalig               HISTORY P6 n20100101v007.fits                                                   HISTORY P7 MASTASPECTFILE =                                                     HISTORY /home/nustar1/nustarops/fltops_repro/30001039_LMC_X1                    HISTORY P7 /30001039002/event_cl/nu30001039002_mast.fits                        HISTORY END PARAMETER list for nucalcpos_0.2.3                                  ABERRAT =                    F / Has aberration been corrected for in sky coordsFOLOWSUN=                    F / Has the Sun position been recalculated for eachHISTORY The DETX DETY X Y columns were updated by coordinator 0.1 on            HISTORY 2015-06-13T                                                             HISTORY 03:51:14 UTC using teldef file                                          HISTORY 31404_tmp_nucoord/nuA20100101v002.teldef                                HISTORY and attitude file 31404_tmp_nucoord/nu30001039002_att.fits.             HISTORY START PARAMETER list for coordinator_0.1 at 2015-06-13T03:51:14         HISTORY P1 EVENTFILE = 31404_tmp_nucoord/nu30001039002A_uf.31137tmp             HISTORY P2 EVENTEXT = EVENTS                                                    HISTORY P3 TIMECOL = TIME                                                       HISTORY P4 SKYXNULL = -1                                                        HISTORY P5 SKYYNULL = -1                                                        HISTORY P6 ATTFILE = 31404_tmp_nucoord/nu30001039002_att.fits                   HISTORY P7 TELDEF = 31404_tmp_nucoord/nuA20100101v002.teldef                    HISTORY P8 ABERRATION = no                                                      HISTORY P9 FOLLOW_SUN = yes                                                     HISTORY P10 RA = 84.91182917                                                    HISTORY P11 DEC = -69.7432389                                                   HISTORY P12 RANDOMIZE = yes                                                     HISTORY P13 SEED = -1956                                                        HISTORY P14 TIMEMARGIN = 32.                                                    HISTORY P15 INTERPOLATION = LINEAR                                              HISTORY P16 HISTORY = yes                                                       HISTORY P17 CHATTER = 3                                                         HISTORY P18 MODE = ql                                                           HISTORY END PARAMETER list for coordinator_0.1                                  HISTORY File modified by 'nuflagbad_0.1.6' (nustardas_09Jun15_v1.5.1) at        HISTORY 2016-06-22T23:10:41                                                     HISTORY 30001039002/hk/nu30001039002A_dspx.fits.gz on-board bad pixels map      HISTORY START PARAMETER list for nuflagbad_0.1.6 at 2016-06-22T23:10:51         HISTORY P2 OUTFILE = ./30001039002/event_cl/nu30001039002A_uf.82096tmp          HISTORY P3 DISPIXFILE = 30001039002/hk/nu30001039002A_dspx.fits.gz              HISTORY P6 OUTBPFILE = ./30001039002/event_cl/nu30001039002A_bp.fits            HISTORY File modified by 'nuhotpix_0.1.5' (nustardas_09Jun15_v1.5.1) at         HISTORY 2016-06-22T23:10:59                                                     HISTORY START PARAMETER list for nuhotpix_0.1.5 at 2016-06-22T23:11:08          HISTORY P3 OUTHPFILE = ./30001039002/event_cl/nu30001039002A_hp.fits            HISTORY File modified by 'nucalcpha_0.2.1' (nustardas_09Jun15_v1.5.1) at        HISTORY 2016-06-22T23:11:12: computed PHA.                                      HISTORY START PARAMETER list for nucalcpha_0.2.1 at 2016-06-22T23:11:22         HISTORY File modified by 'nucalcpi_0.2.1' (nustardas_09Jun15_v1.5.1) at         HISTORY 2016-06-22T23:11:26: computed PI.                                       HISTORY START PARAMETER list for nucalcpi_0.2.1 at 2016-06-22T23:11:36          HISTORY P3 HKFILE = 30001039002/hk/nu30001039002A_fpm.hk.gz                     HISTORY File modified by 'nuflagevt_0.1.3' (nustardas_09Jun15_v1.5.1) at        HISTORY 2016-06-22T23:11:43: computed PHA.                                      HISTORY START PARAMETER list for nuflagevt_0.1.3 at 2016-06-22T23:11:53         HISTORY File modified by 'nucalcpos_0.2.3' (nustardas_09Jun15_v1.5.1) at        HISTORY 2016-06-22T23:12:02.                                                    HISTORY START PARAMETER list for nucalcpos_0.2.3 at 2016-06-22T23:12:12         HISTORY P1 INFILE = 82629_tmp_nucoord/nu30001039002A_uf.82096tmp                HISTORY P2 OUTFILE = 82629_tmp_nucoord/nu30001039002A_uf.82629tmp               HISTORY P6 ALIGNFILE = /Users/bwgref/science/local/CALDB/data/nustar/fpm/bcf/aliHISTORY P6 gn/nuCalign20100101v007.fits                                         HISTORY P7 MASTASPECTFILE = ./30001039002/event_cl/nu30001039002_mast.fits      HISTORY The DETX DETY X Y columns were updated by coordinator 0.1 on 2016-06-22THISTORY 23:12:58 UTC using teldef file 82629_tmp_nucoord/nuA20100101v002.teldef HISTORY and attitude file 82629_tmp_nucoord/nu30001039002_att.fits.             HISTORY START PARAMETER list for coordinator_0.1 at 2016-06-22T23:12:58         HISTORY P1 EVENTFILE = 82629_tmp_nucoord/nu30001039002A_uf.82096tmp             HISTORY P6 ATTFILE = 82629_tmp_nucoord/nu30001039002_att.fits                   HISTORY P7 TELDEF = 82629_tmp_nucoord/nuA20100101v002.teldef                    HISTORY P10 RA = 8.4911829170000E+01                                            HISTORY P11 DEC = -6.9743238900000E+01                                          DSTYP1  = 'GRADE   '           / Data subspace descriptor: name                 DSVAL1  = '0:26    '           / Data subspace descriptor: value                NPIXSOU =     1.0510000000E+03 / Number of image bin in region                  HISTORY TASK: FSELECT on FILENAME: 82750_tmp_nuscreen/xselect82750evt.flt       HISTORY fselect4.4 at 2016-06-22T23:13:48                                       HISTORY EXPRESSION: .NOT.((RAWX==0.AND.GRADE==25).OR.(RAWX==31.AND.GRADE==25).ORHISTORY .(RAWY==0.AND.GRADE==26).OR.(RAWY==31.AND.GRADE==26))                   HISTORY TASK: FSELECT on FILENAME: 82750_tmp_nuscreen/fsel2425-82750evt.flt     HISTORY fselect4.4 at 2016-06-22T23:13:52                                       HISTORY EXPRESSION: STATUS==b000000000x0xx000&&SHIELD==0                        NUPSDOUT=                   0. / Out of calibrated PSD grid ontime (s)          DEPTHCUT= 'NOMINAL '           / Events depth cut screening                     HDUNAME = 'WMAP    '                                                            AXLEN1  =                   36 / Dim of axis 1                                  AXLEN2  =                   37 / Dim of axis 2                                  CONTENT = 'SPECTRUM'           / spectrum file contains time intervals and eventWMREBIN =                    1 / Weighted Map rebinning                         OBS-MODE=                  -10 / observing mode 1=point,2=slew,3=calibration    SKYBIN  =                    1 / Image binning factor                           PIXSIZE = 6.828076000000000E-04 / Image binsize (degrees)                       WMAPFIX =                    T / If true pixels outside selected region set to -DSTYP2  = 'POS(X,Y)'           / Data subspace descriptor: name                 DSREF2  = ':REG00101'          / Data subspace descriptor: reference            DSVAL2  = 'TABLE   '           / Data subspace descriptor: value                CTYPE1  = 'RA---TAN'                                                            CRPIX1  = 2.150000000000000E+01 / X axis reference pixel                        DRPIX1  = 5.005000000000000E+02 / original X axis reference pixel               CRVAL1  = 8.491182999999999E+01 / coord of X ref pixel                          CDELT1  = -6.828076000000000E-04 / X axis increment                             DDELT1  = -6.828076000000000E-04 / original X axis increment                    CTYPE2  = 'DEC--TAN'                                                            CRPIX2  = 1.750000000000000E+01 / Y axis reference pixel                        DRPIX2  = 5.005000000000000E+02 / original Y axis reference pixel               CRVAL2  = -6.974324000000000E+01 / coord of Y ref pixel                         CDELT2  = 6.828076000000000E-04 / Y axis increment                              DDELT2  = 6.828076000000000E-04 / original Y axis increment                     WCSNAMEP= 'PHYSICAL'                                                            WCSTY1P = 'PHYSICAL'                                                            LTV1    = -4.790000000000000E+02 / offset for logical to physical pixel         LTM1_1  = 1.000000000000000E+00 / slope for logical to physical pixel           CTYPE1P = 'X       '           / Source of X-axis                               CRPIX1P = 1.000000000000000E+00 / X axis reference pixel                        CRVAL1P = 4.800000000000000E+02 / coord of X ref pixel in original image        CDELT1P = 1.000000000000000E+00 / X axis increment                              WCSTY2P = 'PHYSICAL'                                                            LTV2    = -4.830000000000000E+02 / offset for logical to physical pixel         LTM2_2  = 1.000000000000000E+00 / slope for logical to physical pixel           CTYPE2P = 'Y       '           / Source of Y-axis                               CRPIX2P = 1.000000000000000E+00 / Y axis reference pixel                        CRVAL2P = 4.840000000000000E+02 / coord of Y ref pixel in original image        CDELT2P = 1.000000000000000E+00 / Y axis increment                              HDUVERS = '2.0.0   '           / Version of format (OGIP memo OGIP-96-001)      OPTIC1  = -9.990000000000000E+02 / X Optical axis                               OPTIC2  = -9.990000000000000E+02 / Y Optical axis                               BBOX1   =                  480 / extractor bbox(1)                              BBOX2   =                  484 / extractor bbox(2)                              HBBOX1  =                    1 / extractor hbbox(1)                             HBBOX2  =                    1 / extractor hbbox(2)                             X-OFFSET=                  480 / first original X pixel in map                  Y-OFFSET=                  484 / first original Y pixel in map                  TOTCTS  =               131974 / Total pixel count                              REFXCTYP= 'RA---TAN'           / projection                                     REFXCRPX= 5.005000000000000E+02 / Original X axis reference pixel               REFXCRVL= 8.491182999999999E+01 / Original Coord of X ref pixel                 REFXCDLT= -6.828076000000000E-04 / Original X axis increment                    REFYCTYP= 'DEC--TAN'           / projection                                     REFYCRPX= 5.005000000000000E+02 / Original Y axis reference pixel               REFYCRVL= -6.974324000000000E+01 / Original Coord of Y ref pixel                REFYCDLT= 6.828076000000000E-04 / Original Y axis increment                     HISTORY WMAP X axis is X                                                        HISTORY WMAP Y axis is Y                                                        HISTORY extractor v5.25                                                         CHECKSUM= 'VAmLW7kLVAkLV5kL'   / HDU checksum updated 2016-06-23T00:19:08       DATASUM = '1519616484'         / data unit checksum updated 2016-06-23T00:19:07 BACKSCAL=  0.00105099949632352 / background file scaling factor                 NUBACKSC=                    T / Has the BACKSCAL keyword been corrected on-grou                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                END                                                                                                                                                                                                                                             øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B,  B,  B  B  B  BH  B8  B  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B(  BD  BD  B  Aÿ  B8  B  B  B,  BH  BD  BD  B(  B0  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  A¯  B   BP  Bd  B4  B  BL  BD  BL  BH  Bx  BD  BH  Bx  B\  BD  B(  B<  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B  B4  B   B   B@  Bh  B`  Bà  BD  BÇ  B\  Bl  B|  BÇ  B|  BP  BL  BH  B   B  B4  BH  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B  B   B4  B|  BL  B8  BÄ  B@  B<  Bt  B`  BÑ  Bé  BÆ  Bx  Bê  Bí  BP  B\  BÄ  B<  BL  B  B  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B<  BL  BT  B$  Bx  B@  B\  B|  BÑ  B®  Bå  Bò  Bt  Bö  B†  Bä  Bî  Bò  Bê  B|  BT  Bd  BÄ  B8  B@  BL  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B@  B  B0  Bx  Bd  Bl  B\  BÇ  Bî  Bê  B†  Bû  Bú  B∫  Bñ  B÷  B÷  B≤  Bå  Bú  Bh  BH  B\  BÇ  BT  Bt  B,  B   øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B  BH  BD  BÄ  Bí  BP  B\  Bx  Bî  Bº  B∫  B‡  B™  BÃ  B¬  B‡  BÊ  B¿  B“  B¨  B¢  B¢  Bå  Bñ  Bä  Bx  B<  B@  BX  B0  øÄ  øÄ  øÄ  øÄ  øÄ  B4  B\  BÄ  BL  BP  Bå  Bé  B∂  Bñ  B¶  B¢  B⁄  B–  B   B¯  B  B»  Bﬁ  BÓ  B‚  B‚  B÷  BŒ  B÷  Bî  Bå  Bx  Bä  BX  B  BT  øÄ  øÄ  øÄ  øÄ  øÄ  B0  B`  B$  BP  BÄ  Bò  B¢  B–  B¿  B∂  B–  B¸  C  C   C  C  C  BÙ  C  C  Bﬁ  BÍ  B‚  B∂  B®  B†  Bé  B\  BX  BX  BÑ  B  øÄ  øÄ  øÄ  BP  B<  B4  Bä  Bt  Bö  B®  B¨  B–  B–  B¯  C  C
+  CE  C  C  C$  C"  C2  C  C	  C  C  C  B⁄  B∫  B‘  B™  Bú  Bå  Bp  Bl  B`  øÄ  øÄ  øÄ  BL  BP  Bx  B`  BÑ  Bû  Bö  B   BÍ  BÊ  B¸  C	  C  C$  C:  C&  CH  CK  C:  C4  C(  C5  C  B‡  BÍ  Bﬁ  B®  B™  Bû  B™  Bà  BT  BH  B   øÄ  øÄ  BD  B\  Bò  Bò  B§  B™  B∞  B÷  C  C  C  C)  CA  CL  CF  Cq  CÄÄ CÜ  Cz  CQ  CK  C2  C6  C-  C  BÍ  B‹  BŒ  BŒ  Bé  Bî  Bh  BL  Bh  øÄ  B@  B`  Bí  Bl  Bò  B∆  Bƒ  B÷  B‹  C  C  C%  CG  CG  Cy  CäÄ Cõ  C∞  C•  Cà  Cè  Cn  Cz  CJ  C%  C  BÍ  BË  B∆  B™  B∏  Bî  Bp  Bx  B<  B  B\  Bå  Bê  Bî  Bñ  B∂  B∆  C  C  C  C,  C6  C_  C|  Cù  C∑Ä C∞Ä C‘Ä CÃÄ CæÄ CúÄ CëÄ CéÄ C\  C8  C  C  B⁄  Bƒ  B¶  Bê  Bé  BT  B`  B4  BX  B<  BD  B¢  Bí  B∂  B»  B‡  C  C  C4  C)  CD  CÖ  CöÄ C∫  C÷  C˙  D  C˛Ä Cı  C…Ä Cù  CÅ  Cj  CL  C2  C   BÓ  C  BŒ  B≤  Bh  BÑ  Bê  BÇ  BP  BD  BÑ  BD  Bå  B¿  B¨  BÚ  B  C  C(  C  Cf  Cò  C£  C÷  C˘Ä D¿ D#@ DÄ D  C˛Ä C∑  C†Ä CÉ  CP  C>  C  B¸  BÊ  B“  B¿  BÆ  BÄ  B0  B$  Bh  Bp  Bp  Bp  B‘  Bå  B∂  BÊ  B‚  C  C'  C@  Co  Cá  C∂Ä C·Ä D  D!  D*  D¿ D  CÌÄ C∆Ä C§  C{  CQ  C=  C	  C  B‹  B§  B®  B§  Bê  Bx  B4  B,  B4  Bt  Bd  Bú  Bû  B“  BÃ  Bˆ  C  C  CL  CÇÄ Cå  CæÄ CÓÄ D
+  D  D&  D@ DÄ C˚  C∑Ä C£Ä CäÄ CD  C0  C-  C  B˙  B∫  B™  BÑ  Bö  B@  BL  Bl  BD  Bp  BÇ  Bx  Bö  BÆ  B¯  C  C   C9  CH  Cr  CÖÄ C∏  Cÿ  C˘Ä D  D Ä D  D  CÊÄ C¡  Cí  Cq  CV  C)  C  Bˆ  B⁄  Bÿ  B¢  B¿  Bt  Bx  Bh  B,  BD  BT  BÄ  B¨  Bò  B§  B‡  C  C  C,  CO  Ce  Cõ  C•Ä CΩ  CÏ  C·  DÄ CÚ  C·Ä C«Ä C´Ä CêÄ CZ  C+  C6  B¯  B˙  Bÿ  B∫  Bú  Bà  Bä  BÄ  B4  B\  B\  B(  Bí  Bö  B¿  Bˆ  B‡  C  C  C/  CF  C`  CÜ  CüÄ Cü  C≈  C Ä CÀÄ CÀÄ C∑Ä CûÄ CÖ  C{  CH  C?  C  B¸  BÓ  B‹  B¢  B∂  B†  Bp  B<  B@  BX  B<  Bh  BÄ  Bñ  B¶  Bÿ  B¿  C  C.  C   CA  CC  CN  CÜÄ CñÄ CóÄ C∞Ä CöÄ Cò  Cû  CÉ  CÇÄ C7  CH  C#  C  B⁄  BÚ  B≤  Bò  Bî  B`  Bl  BÜ  BH  BT  BT  Bñ  B|  Bê  B¥  Bﬁ  B¯  C  C  C  C%  C?  CF  C|  Cw  Cz  CÅ  CÇ  Cá  CÄÄ CS  CI  C>  C  C  B¸  Bﬁ  B≤  B†  BÆ  Bñ  B|  Bh  B|  B0  øÄ  øÄ  B\  BÇ  Bò  Bö  B¿  B∂  B‚  C  C  C  C  C.  Ca  C[  CB  CX  CE  C=  C8  C0  C;  C  C  B‰  C  BË  Bû  Bö  Bö  Bñ  Bd  BD  B\  B  øÄ  øÄ  Bp  Bû  B¨  B®  Bæ  B‹  Bæ  BÊ  C  C  C!  C:  C&  C&  C4  C   C7  C0  C(  C  C'  B˛  BÓ  B‡  BÚ  B‡  Bò  B®  Bx  B\  B`  BH  B  B<  øÄ  øÄ  B@  BÇ  Bt  Bä  BÆ  B≤  B–  C  B‰  C   B¸  BÚ  B¸  C  C  C'  C  C  C  BŒ  C  BŒ  Bˆ  BÓ  BÃ  BÆ  Bî  Bé  Bî  B<  Bt  B,  B  øÄ  øÄ  øÄ  øÄ  B\  Bà  Bñ  Bú  BÆ  Bƒ  Bæ  BÚ  Bÿ  B¯  C   BË  B÷  C
+  C  C  C  C  C  BË  B‚  Bæ  B»  Bú  Bñ  Bî  Bê  Bé  Bh  BL  BX  BD  øÄ  øÄ  øÄ  øÄ  øÄ  Bí  Bà  B¶  BÆ  Bê  B¨  B“  B÷  B¿  B‰  Bﬁ  Bﬁ  C  C  B   B‚  B‘  BË  B–  BŒ  B¥  B¢  Bú  Bú  Bê  Bx  B0  BP  B,  BL  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  Bà  BH  Bå  BÑ  Bí  B∂  B∫  BÆ  B≤  B∂  B≤  B‘  BÊ  B   B¬  B⁄  B¥  B¥  B∞  B∂  B∫  B|  Bû  BÜ  BD  BL  B@  B  B   øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  BD  BP  BÜ  BÑ  Bä  B§  Bñ  B∫  B§  B‘  Bû  BÃ  B   C  B∞  B¨  B†  B≤  Bî  Bñ  Bä  Bp  BÑ  Bl  B@  B  BD  BD  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  BP  Bl  Bä  Bò  BL  Bà  Bö  B∏  BÄ  B¿  B§  B¥  Bö  B¨  Bp  B†  Bí  B¶  Bö  Bx  B@  BD  B`  B,  B   B  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  BH  Bê  B\  BÄ  BÄ  Bå  BT  Bí  B∞  B¶  Bí  B®  Bû  Bå  Bî  Bé  BÑ  BÇ  B\  Bl  BH  B<  B   øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  BP  Bt  Bh  BT  Bî  Bl  B§  Bä  Bñ  B¨  Bé  Bl  Bt  Bl  BX  BX  B8  BL  Bl  B$  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B  B0  Bd  Bt  B|  Bd  Bå  Bx  Bä  Bh  BÑ  BL  Bp  B|  B,  BD  B,  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  BH  Bä  BÜ  Bd  Bd  Bñ  B\  BL  BX  BD  BD  B  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  B@  B8  B   B`  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ  øÄ                                                                                                                                                                                                                                                                                                                                                                                                                                                  XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / array data type                                NAXIS   =                    2 / number of array dimensions                     NAXIS1  =                    8 / length of dimension 1                          NAXIS2  =                 4096 / length of dimension 2                          PCOUNT  =                    0 / number of group parameters                     GCOUNT  =                    1 / number of groups                               TFIELDS =                    2 / number of table fields                         EXTNAME = 'SPECTRUM'           / name of this binary table extension            HDUCLASS= 'OGIP    '           / format conforms to OGIP standard               HDUCLAS1= 'SPECTRUM'           / PHA dataset (OGIP memo OGIP-92-007)            HDUVERS1= '1.2.0   '           / Obsolete - included for backwards compatibilityHDUVERS = '1.2.0   '           / Version of format (OGIP memo OGIP-92-007)      HDUCLAS2= 'TOTAL   '           / Gross PHA Spectrum (source + bkgd)             HDUCLAS3= 'COUNT   '           / PHA data stored as Counts (not count/s)        TLMIN1  =                    0 / Lowest legal channel number                    TLMAX1  =                 4095 / Highest legal channel number                   TELESCOP= 'NuSTAR  '           / Telescope (mission) name                       INSTRUME= 'FPMA    '           / Instrument name                                FILTER  = 'NONE    '           / no filter in use                               EXPOSURE=                  1.0 / Exposure time                                  AREASCAL=         1.000000E+00 / area scaling factor                            BACKFILE= '' / associated background filename                                   BACKSCAL=  0.00105099949632352 / background file scaling factor                 CORRFILE= 'none    '           / associated correction filename                 CORRSCAL=         1.000000E+00 / correction file scaling factor                 RESPFILE= 'det0B.rmf'          / associated redistrib matrix filename           ANCRFILE= '' / associated ancillary response filename                           PHAVERSN= '1992a   '           / obsolete                                       DETCHANS=                 4096 / total number possible channels                 CHANTYPE= 'PI      '           / channel type (PHA, PI etc)                     POISSERR=                    T / Poissonian errors to be assumed                STAT_ERR=                    0 / no statistical error specified                 SYS_ERR =                    0 / no systematic error specified                  GROUPING=                    0 / no grouping of the data has been defined       QUALITY =                    0 / no data quality information specified          HISTORY  FITS SPECTRUM extension written by WTPHA2 1.0.1                        DATAMODE= 'NONE    '           / Datamode                                       OBJECT  = 'LMC_X1  '           / Name of observed object                        ONTIME  = 4.337795409774780E+04 / On-source time                                DEADC   =       9.21586812E-01 / Deadtime correction                            DEADAPP =                    F / Has DEADC been applied to data                 LIVETIME= 3.997655040818080E+04 / Deadtime corrected on-source time             DATE-OBS= '2014-08-08T12:31:07' / Start date of observations                    DATE-END= '2014-08-09T02:41:07' / End date of observations                      TSTART  = 1.451970090000000E+08 / time start                                    TSTOP   = 1.452478984249942E+08 / time stop                                     TELAPSE = 5.088942499417067E+04 / elapsed time                                  MJD-OBS = 5.687752170351852E+04 / MJD of data start time                        MJDREFI =                55197 / MJD reference day                              MJDREFF = 7.660185200000000E-04 / MJD reference (fraction of day)               TIMEREF = 'LOCAL   '           / reference time                                 TIMESYS = 'TT      '           / time measured from                             TIMEUNIT= 's       '           / unit for time keywords                         EQUINOX =            2.000E+03 / Equinox of celestial coord system              RADECSYS= 'FK5     '           / celestial coord system                         USER    = 'bwgref  '           / User name of creator                           FILIN001= 'lnk-nu30001039002A01_cl.evt' / Input file name                       CREATOR = 'extractor v5.25'    / Extractor                                      DATE    = '2016-06-23T00:19:07' / file creation date (YYYY-MM-DDThh:mm:ss UT)   ORIGIN  = 'NASA/GSFC'          / origin of fits file                            TOTCTS  =               131974 / Total counts in spectrum                       RA_PNT  = 8.489319999999999E+01 / File average of RA(degrees)                   DEC_PNT = -6.968880000000000E+01 / File average of DEC(degrees)                 PA_PNT  = 1.151983000000000E+02 / File average of ROLL(degrees)                 SPECDELT=                    1 / Binning factor for spectrum                    SPECPIX =                    0 / The rebinned channel corresponding to SPECVAL  SPECVAL = 0.000000000000000E+00 / Original channel value at center of SPECPIX   DSTYP1  = 'GRADE   '           / Data subspace descriptor: name                 DSVAL1  = '0:26    '           / Data subspace descriptor: value                DSTYP2  = 'POS(X,Y)'           / Data subspace descriptor: name                 DSREF2  = ':REG00101'          / Data subspace descriptor: reference            DSVAL2  = 'TABLE   '           / Data subspace descriptor: value                HISTORY extractor v5.25                                                         CHECKSUM= '3AOR6AOP3AOP3AOP'   / HDU checksum updated 2016-06-23T00:20:28       DATASUM = '8518534 '           / data unit checksum updated 2016-06-23T00:19:07 NUBACKSC=                    T / Has the BACKSCAL keyword been corrected on-grouTTYPE1  = 'CHANNEL '                                                            TFORM1  = 'J       '                                                            TTYPE2  = 'COUNTS  '                                                            TFORM2  = 'J       '                                                            TUNIT2  = 'count   '                                                            END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^¿     1ó     2∆     3ë     4     5/     5≠     6ä     8ô   	  ;G   
+  =Á     A     FF     I‡     L£     O~     Qﬂ     S%     T;     S∞     Vy     U+     U¢     V∞     WU     Zæ     ^     `     ex     g™     m7     q6      r—   !  s   "  pè   #  p]   $  m_   %  l°   &  lË   '  kπ   (  jh   )  k~   *  kÈ   +  j7   ,  l=   -  mO   .  o7   /  nT   0  oÜ   1  o   2  qå   3  n§   4  p˚   5  nÌ   6  oÎ   7  p!   8  oà   9  nl   :  mº   ;  n	   <  lÌ   =  lï   >  l6   ?  l˚   @  l⁄   A  me   B  nü   C  nl   D  oì   E  nÒ   F  oD   G  mâ   H  l°   I  l∞   J  kM   K  i™   L  gd   M  g∂   N  e∑   O  f-   P  dˆ   Q  e   R  c≈   S  b<   T  aﬂ   U  a,   V  aD   W  a∫   X  `÷   Y  bR   Z  a-   [  a:   \  `»   ]  `≠   ^  _©   _  `/   `  ^µ   a  ^m   b  ]ø   c  ]‹   d  \‡   e  \   f  \   g  [p   h  [s   i  [Ú   j  Y¡   k  Z3   l  Zo   m  Z   n  YP   o  Y@   p  [
+   q  Zì   r  [ƒ   s  \‘   t  ]¸   u  ]˛   v  _C   w  _ä   x  `*   y  ^8   z  ^¬   {  ]Ú   |  [Í   }  Yı   ~  Wô     Uç   Ä  T   Å  P◊   Ç  Oy   É  M   Ñ  M7   Ö  KV   Ü  J¡   á  I(   à  I	   â  G˙   ä  H   ã  G‹   å  G^   ç  H   é  GÓ   è  H\   ê  G˚   ë  G,   í  F|   ì  F   î  EÅ   ï  Dd   ñ  C¢   ó  D∏   ò  Cå   ô  C   ö  C    õ  BÇ   ú  B   ù  AŒ   û  A∂   ü  @]   †  ?ò   °  ?@   ¢  ?A   £  =ª   §  =   •  =>   ¶  ;˝   ß  :à   ®  :∂   ©  :Ÿ   ™  9¬   ´  9Ù   ¨  9G   ≠  :Ö   Æ  8Ì   Ø  7Ø   ∞  9   ±  7Z   ≤  6Á   ≥  7Ä   ¥  7~   µ  6∑   ∂  5‘   ∑  5r   ∏  5T   π  3Ô   ∫  4à   ª  4   º  2è   Ω  2ˇ   æ  3¢   ø  2"   ¿  2g   ¡  1í   ¬  1W   √  1ª   ƒ  0†   ≈  0b   ∆  0Õ   «  /ì   »  /≥   …  /J      .k   À  /i   Ã  .z   Õ  -ñ   Œ  -N   œ  -n   –  -   —  ,Ü   “  ,r   ”  ,   ‘  *ñ   ’  *∞   ÷  )µ   ◊  )   ÿ  )¥   Ÿ  (Ñ   ⁄  (ê   €  '˙   ‹  'L   ›  'ƒ   ﬁ  '   ﬂ  &π   ‡  &»   ·  &s   ‚  &Z   „  %Ï   ‰  %˜   Â  %ù   Ê  %J   Á  $7   Ë  ${   È  $∏   Í  $-   Î  #†   Ï  #®   Ì  "v   Ó  #   Ô  "o     "Q   Ò  "i   Ú  !   Û   Ê   Ù  !´   ı       ˆ  Ã   ˜     ¯  L   ˘     ˙  Ñ   ˚  B   ¸  ﬁ   ˝  Ç   ˛  ë   ˇ  1     •    ¸    6    }    3    ª        Ã    1  	    
+  ≈    Z        «    ?    Ñ    Ò    Í    l    <    Â    ∏    Ø    ◊    µ    ‚    \    ≤    >    ù    ª    »       !  ô  "  F  #  %  $  ı  %  >  &    '  w  (  7  )  ‰  *  æ  +  j  ,  ò  -  =  .  T  /  ˝  0  J  1  j  2  1  3    4    5  `  6    7  ﬂ  8  ﬁ  9  ˘  :  Ô  ;  G  <  g  =  ∑  >  P  ?  Ø  @  ≈  A  Q  B  Ÿ  C  ®  D  Õ  E  „  F  £  G  ˆ  H  ˘  I  ∞  J  ®  K  c  L  Ü  M  ó  N  O  O  3  P  U  Q    R  ;  S  n  T  d  U  2  V  4  W    X  ·  Y  g  Z  ò  [  f  \  i  ]  b  ^    _  Ë  `  V  a  È  b  ◊  c  V  d  i  e  ∂  f  7  g  ˝  h  %  i    j  V  k  I  l  0  m  È  n    o  ,  p  n  q  Ú  r  •  s  I  t  ¸  u  ˛  v    w  û  x  ã  y  <  z    {  ª  |  ¶  }  ±  ~  ﬂ    ≤  Ä  ä  Å  ô  Ç  ã  É    Ñ  I  Ö  ë  Ü  À  á  ,  à  ,  â    ä  ≥  ã  ›  å  ¬  ç     é  Œ  è  ¨  ê    ë  Á  í  ù  ì    î  ∆  ï  w  ñ  ⁄  ó  3  ò  x  ô  „  ö  ¢  õ  W  ú     ù  N  û  V  ü  ˛  †  ‚  °  Y  ¢    £  æ  §    •  X  ¶  ˘  ß    ®    ©    ™  v  ´    ¨  '  ≠    Æ  ÿ  Ø  ˘  ∞    ±  C  ≤    ≥  ‚  ¥  ò  µ  9  ∂  ˛  ∑  €  ∏  ◊  π  2  ∫  M  ª  Ê  º  ˜  Ω  *  æ  0  ø  '  ¿  r  ¡  #  ¬  Ë  √    ƒ  ﬂ  ≈  ¡  ∆  N  «  a  »  ⁄  …  g     õ  À  ÿ  Ã    Õ  a  Œ  å  œ  /  –  ±  —  ì  “  á  ”  y  ‘  Ä  ’  c  ÷  G  ◊  µ  ÿ    Ÿ  ë  ⁄  ~  €  ¬  ‹  ﬂ  ›  ˛  ﬁ  ∆  ﬂ  À  ‡  Ç  ·  L  ‚  Z  „     ‰  ‰  Â  ˇ  Ê  \  Á  ¬  Ë    È  c  Í  2  Î  d  Ï  Ø  Ì  ø  Ó  @  Ô  Ø      Ò  c  Ú  U  Û  †  Ù  b  ı  r  ˆ  Ø  ˜  2  ¯  ˚  ˘  z  ˙  Á  ˚  å  ¸  ¢  ˝  ˜  ˛  ¨  ˇ  ß     p    †    t    P    ‚    X         s      	  G  
+  s    V    œ        x    u    l    G    ó    Ω    t        ó    ß    Í    ◊    ™    L    ´    V    4    ≈     +  !  £  "  ≤  #    $  E  %    &  q  '  
+  (  `  )    *  
+  +    ,  ⁄  -  Æ  .  Ì  /  „  0  A  1  |  2  g  3  ÿ  4  V  5  &  6  n  7  ´  8  √  9  /  :    ;  “  <  ◊  =  ˘  >  n  ?  ‰  @  …  A  b  B  u  C  _  D  …  E    F  ≠  G   n  H   G  I   _  J   ê  K   5  L   *  M    N    O  ª  P  …  Q  |  R  ⁄  S  å  T  ¶  U  q  V  •  W  f  X  Ñ  Y  &  Z  ì  [  R  \  ﬁ  ]    ^  ﬁ  _    `  |  a  ©  b  Q  c  7  d  Â  e  @  f  à  g  Î  h  ;  i  ¬  j  F  k  ˜  l  †  m  ¢  n  ì  o  È  p  Ÿ  q  T  r  e  s    t  H  u  â  v  ï  w    x    y  ∑  z  a  {  ‘  |  Â  }    ~  π    \  Ä  €  Å  4  Ç  ™  É  €  Ñ  (  Ö  ˘  Ü  0  á  Ï  à  ˇ  â  f  ä    ã  f  å    ç  _  é  Œ  è    ê  ö  ë    í  í  ì    î  ÿ  ï  –  ñ  Ç  ó  *  ò  H  ô  W  ö  ˝  õ  ≥  ú  &  ù  ã  û  ¶  ü  ™  †  s  °  ï  ¢  æ  £  •  §  Â  •  Õ  ¶  "  ß  î  ®  i  ©  ‡  ™  -  ´  1  ¨  p  ≠  '  Æ  S  Ø     ∞  T  ±  ø  ≤  ∞  ≥  ⁄  ¥  ∫  µ  1  ∂    ∑  C  ∏    π  ç  ∫  ç  ª  æ  º  [  Ω  Ê  æ  M  ø  T  ¿  ê  ¡  û  ¬  Å  √  ì  ƒ  ç  ≈  9  ∆  ç  «  ¨  »    …  §       À  C  Ã    Õ  ‚  Œ  î  œ  J  –  5  —  r  “  $  ”    ‘  á  ’    ÷     ◊  Ü  ÿ  a  Ÿ  Ÿ  ⁄  Ö  €  V  ‹  ’  ›  R  ﬁ  ï  ﬂ  *  ‡  ı  ·  í  ‚  \  „  ÷  ‰  ´  Â  ]  Ê  g  Á  '  Ë  l  È  £  Í  ’  Î  @  Ï  ∑  Ì  o  Ó  Ì  Ô  Ø    ¥  Ò  ü  Ú    Û  9  Ù  /  ı  —  ˆ    ˜  U  ¯  ^  ˘  3  ˙  ,  ˚  
+•  ¸  
+ø  ˝  
+ò  ˛  	Ÿ  ˇ  
+C     
+    	º    	¢    	¯    	|    	f    	î    	c    	Q  	  	¶  
+  	m    	7    	i    	3    	    ¯    	ã    	W    Û    –    Õ    ’    ∏    ﬁ    Í    	+    	+    œ    …    ·    ﬁ    í     ¡  !  Ë  "  Í  #  	+  $  ›  %  —  &  	J  '  π  (  	  )  ﬁ  *  	P  +  	  ,  	∂  -  	c  .  	x  /  	ú  0  	÷  1  	è  2  	â  3  	Ç  4  	∑  5  	√  6  	˙  7  
+7  8  
+  9  	Î  :  
+?  ;  	‡  <  	Ã  =  	∆  >  	†  ?  	£  @  	  A  	q  B  	Y  C  	Ö  D  	û  E  	˘  F  	Ä  G  	I  H  	D  I  	  J  	  K  	  L  	8  M  	  N  	!  O  	'  P  	  Q  	   R  Ï  S  	b  T  	  U  ˜  V  	C  W  	  X  	"  Y  Ú  Z  	  [  	  \  	  ]  	`  ^  	R  _  	   `  	H  a  	  b  	  c  Ú  d  		  e  	   f  	:  g  	9  h  	#  i  	  j  	[  k  	#  l  	  m  	$  n  	&  o  	  p  	  q  	@  r  		  s  	J  t  	  u  	]  v  	u  w  	  x  	n  y  	G  z  	I  {  	ë  |  	{  }  	g  ~  	z    	-  Ä  	∑  Å  	ã  Ç  	æ  É  	å  Ñ  	≤  Ö  	π  Ü  	∞  á  	Ä  à  	ô  â  
+/  ä  	Á  ã  
+'  å  	ˇ  ç  
+  é  
+:  è  
+i  ê  
+ò  ë  
+  í  
+O  ì  
+–  î  
+À  ï  
+⁄  ñ  
+Ù  ó  `  ò  {  ô  µ  ö  ù  õ  ∏  ú  ◊  ù  >  û    ü  Q  †  ⁄  °  æ  ¢  T  £    §  e  •  L  ¶  ó  ß  Œ  ®  ®  ©  T  ™  h  ´  
+  ¨  G  ≠  
+  Æ  £  Ø  Œ  ∞  ß  ±  Í  ≤  :  ≥    ¥  W  µ  
+ú  ∂  
+á  ∑  
+'  ∏  
+  π  
+T  ∫  
+o  ª  
+  º  
+  Ω  	≤  æ  	Ø  ø  	∂  ¿  	z  ¡  	≠  ¬  	¨  √  	«  ƒ  	‹  ≈  	•  ∆  	∞  «  	¢  »  	^  …  	ç     	å  À  	ö  Ã  	d  Õ  	À  Œ  	  œ  	£  –  	Ö  —  	Q  “  	H  ”  	{  ‘  	U  ’  	E  ÷  	t  ◊  	o  ÿ  	  Ÿ  	"  ⁄  	R  €  	à  ‹  	S  ›  	F  ﬁ  	Ç  ﬂ  	-  ‡  	O  ·  	H  ‚  	  „  „  ‰  	*  Â  	  Ê  ˆ  Á  	3  Ë  	ú  È  	Z  Í  	  Î  	@  Ï  	K  Ì  	Z  Ó  	/  Ô  		    	8  Ò  	p  Ú  	  Û  	`  Ù  	V  ı  	É  ˆ  	  ˜  	?  ¯  	d  ˘  	]  ˙  	  ˚  	D  ¸  	]  ˝  	l  ˛  	<  ˇ  	j     	2    	U    	x    	å    	j    	     	N    	©    	.  	  	á  
+  	ë    	ß    	˙    	»    	r    	°    	|    	Å    	C    	ø    	°    
+    	c    	W    	î    	ç    	£    	Ø    	«    	≥    	‚    	z     	ú  !  	ö  "  	o  #  	º  $  	s  %  	Å  &  	é  '  	d  (  	¿  )  	l  *  	ñ  +  	µ  ,  	ú  -  	i  .  	   /  	‡  0  	ß  1  	†  2  	≈  3  	î  4  	â  5  	À  6  
+  7  	±  8  	Ø  9  	Ã  :  	Ê  ;  
+  <  	Ì  =  	Â  >  	‘  ?  	≤  @  	Ç  A  
+%  B  	∑  C  
+  D  	˙  E  	¡  F  
+;  G  	Ò  H  	‘  I  	Ê  J  
+  K  	®  L  	Ó  M  
+  N  
+  O  	Î  P  
+v  Q  
+!  R  
+%  S  	Ë  T  
+)  U  
+L  V  
+Z  W  
+U  X  
+∆  Y  
+`  Z  
+]  [  
+{  \  
+è  ]  
+-  ^  
+5  _  
+>  `  
+~  a  
+F  b  
+«  c  
+Ø  d  
+¢  e  
+µ  f  
+Z  g  
+0  h  
+8  i  
+´  j  
+  k  
+f  l  
+I  m  
+u  n  
+u  o  
+v  p  
+†  q  
+U  r  
+1  s  
+1  t  
+m  u  
+  v  	œ  w  
+1  x  
+2  y  	Ú  z  
+Œ  {  
+E  |  
+M  }  
+B  ~  	ø    	“  Ä  
+e  Å  	˛  Ç  
+4  É  	≈  Ñ  
+  Ö  
+  Ü  	ˇ  á  	˝  à  	‘  â  	π  ä  
+  ã  	˘  å  	÷  ç  
+  é  	Ó  è  
+
+  ê  
+  ë  
+  í  	Í  ì  
+\  î  
+  ï  	§  ñ  
+3  ó  	˚  ò  
+  ô  
+4  ö  
+  õ  	≈  ú  
+;  ù  	Í  û  
+  ü  
+L  †  	∏  °  
+&  ¢  
+  £  	ı  §  	‚  •  	Ù  ¶  
+.  ß  	¿  ®  
+  ©  
+M  ™  	Í  ´  
+U  ¨  
+&  ≠  	Ê  Æ  
+)  Ø  
+  ∞  
+:  ±  	Ò  ≤  
+$  ≥  
+  ¥  
+(  µ  
+M  ∂  	Ò  ∑  	˚  ∏  
+	  π  
+E  ∫  	‹  ª  
+   º  
+Z  Ω  
+  æ  	Ò  ø  
+U  ¿  
+T  ¡  
+F  ¬  	˚  √  	˚  ƒ  
+$  ≈  
+ì  ∆  
+  «  
+¶  »  
+  …  
+     	Ï  À  
+f  Ã  
+ê  Õ  
+´  Œ  
+•  œ  
+s  –  
+Ã  —  
+Ä  “  
+ü  ”  
+Ñ  ‘  
+À  ’  
+Ü  ÷  
+◊  ◊     ÿ  
+–  Ÿ  
+  ⁄  _  €  F  ‹  ö  ›  Ø  ﬁ  ~  ﬂ  ˝  ‡  £  ·  Í  ‚  ˇ  „  ,  ‰    Â  >  Ê  >  Á  C  Ë    È  9  Í  r  Î  ï  Ï  ì  Ì  ;  Ó  Õ  Ô  `    ï  Ò  ë  Ú  R  Û  K  Ù  ¸  ı  Õ  ˆ  t  ˜  F  ¯  û  ˘  -  ˙    ˚  
+Ï  ¸  
+X  ˝  
+Ñ  ˛  
+a  ˇ  
+g     
+S    
+(    
+    	Ú    	Ÿ    	≈    
+    	c    	=  	  	O  
+  	m    	%    	}    	s    	å    	j    	m    	r    	B    	u    	ä    	%    	L    	7    	#    	(    	P    	,    ˝    	k    ‰    	     €  !  ˆ  "  	  #  Ù  $  	b  %  	  &  Œ  '  	K  (  ˇ  )  	  *  n  +  	  ,  „  -  Ò  .  ò  /  ´  0  Î  1  ã  2  ß  3  Ô  4  Â  5  	  6  π  7  À  8  Ã  9  ™  :  ·  ;  ¥  <  ü  =  ›  >  	
+  ?  ó  @  ú  A  è  B  	  C  ∫  D  ¡  E  m  F  ©  G  	  H  V  I  ∑  J  ô  K  à  L  s  M  ±  N  n  O  §  P  ’  Q  π  R  Ø  S  ¨  T  |  U  ë  V  í  W  à  X  ›  Y  g  Z    [  ÿ  \  ä  ]  †  ^  ©  _  «  `  Â  a  Ä  b  ã  c  …  d  a  e  ›  f  t  g  §  h  õ  i  d  j  O  k  ~  l  ^  m  =  n  i  o  c  p  y  q  &  r  ®  s  °  t  I  u  ü  v  -  w  ⁄  x  f  y  T  z  M  {  e  |  F  }  m  ~  ,    E  Ä  ›  Å    Ç  !  É  `  Ñ  ˚  Ö  a  Ü    á  ò  à  D  â  
+  ä  ˝  ã    å  [  ç  ›  é  X  è  ,  ê  [  ë    í  	  ì  _  î    ï    ñ  M  ó  ]  ò  H  ô  X  ö  Ø  õ  ÿ  ú  Á  ù    û  )  ü    †    °  Ù  ¢  ¡  £  ≈  §  ∫  •  õ  ¶  Á  ß  ˚  ®  Ã  ©  ì  ™  Û  ´  å  ¨  Í  ≠  Ä  Æ  d  Ø  K  ∞  z  ±  =  ≤  à  ≥  ¥  ¥  q  µ  E  ∂  o  ∑  À  ∏  º  π  ô  ∫  ¬  ª  ©  º  b  Ω  q  æ  »  ø  [  ¿  º  ¡  j  ¬  á  √  E  ƒ  ö  ≈  ú  ∆  Ñ  «  r  »  å  …  T     à  À  ö  Ã  à  Õ  s  Œ  o  œ  z  –  ®  —  ã  “  7  ”  Ü  ‘  )  ’  Z  ÷  x  ◊  m  ÿ  ü  Ÿ  ∞  ⁄  z  €  ç  ‹  ë  ›  [  ﬁ  ¢  ﬂ  ¥  ‡  ¶  ·  n  ‚  j  „  Ï  ‰  Ñ  Â  z  Ê  ì  Á  y  Ë  √  È  π  Í  ™  Î  t  Ï  §  Ì  ˜  Ó  °  Ô  ≠    b  Ò  $  Ú  ø  Û  ‚  Ù  ¨  ı  ò  ˆ     ˜  Á  ¯  ÿ  ˘    ˙  æ  ˚  ﬂ  ¸  â  ˝  –  ˛  ∂  ˇ  ø     ß    ı    ≠    ç    ö    ÿ    ´    õ    ø  	  ∂  
+  	    ˜    Í            Ë    Ï    Í    ë        '    ˙    $    è    5    "            F    .    
+    W     ˘  !  O  "  J  #  I  $  _  %  V  &    '  n  (    )  4  *  W  +  t  ,    -  p  .  d  /    0  +  1  E  2  r  3  /  4  Ó  5  +  6  ñ  7  z  8  C  9  '  :  j  ;  •  <  •  =  8  >  {  ?  ±  @  W  A  ÿ  B  ÿ  C  ﬂ  D  ˛  E  	  F  	  G  	H  H  	U  I  	  J  	  K  	t  L  	n  M  	V  N  	`  O  	î  P  	9  Q  	´  R  	m  S  	«  T  	ï  U  	¥  V  	á  W  	R  X  	à  Y  	d  Z  	  [  Æ  \  ü  ]  ì  ^  X  _  ]  `  X  a     b  Ÿ  c  !  d  ¡  e  p  f  U  g  B  h  G  i  N  j  Ê  k    l    m    n    o    p  π  q  *  r  Ê  s  	  t  (  u  ‘  v    w  „  x  ¥  y  Ù  z  ‡  {  È  |  ®  }  ≤  ~  o    Ò  Ä  ¬  Å  |  Ç  à  É  â  Ñ  ß  Ö  ¡  Ü  ê  á  ∆  à  –  â  M  ä  È  ã  √  å  Ä  ç  ê  é  b  è  ¥  ê  S  ë  a  í  X  ì  ô  î  R  ï  >  ñ  P  ó  ë  ò  G  ô  a  ö  î  õ  m  ú  y  ù  ¸  û  è  ü  p  †  í  °  O  ¢  1  £  e  §    •  ]  ¶  t  ß  9  ®  @  ©  D  ™  ]  ´  ò  ¨  2  ≠  ]  Æ  8  Ø  N  ∞  m  ±  Q  ≤  `  ≥  ?  ¥  Y  µ  @  ∂  K  ∑  3  ∏  5  π  ô  ∫  u  ª  p  º  u  Ω    æ  D  ø  z  ¿  6  ¡    ¬  b  √  4  ƒ  -  ≈  /  ∆  H  «  V  »  8  …       å  À  Ç  Ã  W  Õ  D  Œ  ç  œ  1  –  j  —  5  “  ä  ”  ª  ‘  ú  ’  $  ÷  }  ◊  Ä  ÿ  Z  Ÿ  â  ⁄  ù  €  #  ‹  R  ›  5  ﬁ  Ï  ﬂ  à  ‡  \  ·  m  ‚  u  „  m  ‰  °  Â  ^  Ê  ñ  Á  e  Ë  Ö  È  ≥  Í  ï  Î  ù  Ï  ∞  Ì  ñ  Ó  ∑  Ô  ™    I  Ò  |  Ú  ¡  Û  ä  Ù  Ç  ı  ∫  ˆ  g  ˜  ñ  ¯  ∫  ˘  ù  ˙  Ã  ˚  Ò  ¸  ‹  ˝  ∏  ˛  û  ˇ  s     º    à    ´        ¡    Í    Ã    ¶      	  ”  
+  ¯        ¿    Ê    œ        ≥    >    )    —    ì    Õ        Õ         Ã    Â    ¡    †        Æ    œ     È  !  ‘  "  ’  #  ™  $  ∑  %    &  ‰  '  …  (  ´  )  ∆  *  Ê  +  ‰  ,  ‘  -  û  .  ª  /  c  0  ù  1    2  Ê  3  e  4  ç  5  Ü  6  æ  7  ™  8  û  9  ´  :  Ÿ  ;  ø  <  ò  =  ∆  >  ±  ?  ê  @  ˚  A  Ÿ  B    C    D     E  Ë  F     G  ≠  H  ≥  I  ≠  J  Ÿ  K  Õ  L  ‘  M  Ö  N  ´  O  ø  P  ≠  Q  é  R  @  S  ¢  T  e  U  Ø  V  Ä  W  ~  X  }  Y  P  Z  @  [  É  \  7  ]  0  ^  l  _  =  `  b  a  J  b  '  c  3  d  4  e  R  f  !  g  ©  h  C  i    j  8  k  /  l  B  m    n  9  o    p  B  q    r    s    t  /  u    v  ÿ  w  2  x    y  '  z  ‰  {  Û  |  Ë  }    ~  ˆ    P  Ä  S  Å    Ç  ﬂ  É  #  Ñ    Ö    Ü  Ò  á  ˇ  à    â  6  ä  œ  ã  Ë  å    ç  Ê  é  ˛  è    ê  ›  ë  Ù  í  \  ì  D  î  ˝  ï    ñ  J  ó  0  ò  )  ô  h  ö    õ  :  ú    ù  [  û  %  ü  %  †  %  °  €  ¢  |  £  *  §  @  •  õ  ¶  
+  ß  M  ®  !  ©  E  ™    ´  ú  ¨  [  ≠  <  Æ  c  Ø  ä  ∞  ¶  ±  ,  ≤  é  ≥  U  ¥  ñ  µ  D  ∂  Ø  ∑  Ç  ∏  æ  π  D  ∫  F  ª  ì  º  y  Ω  y  æ  r  ø  o  ¿  ä  ¡  É  ¬  K  √  c  ƒ  ë  ≈  d  ∆  I  «  K  »  -  …  z     %  À  F  Ã  3  Õ  M  Œ  `  œ  .  –  8  —  U  “  \  ”    ‘  f  ’  Y  ÷  (  ◊  [  ÿ  [  Ÿ  a  ⁄  -  €  e  ‹    ›  +  ﬁ  Ü  ﬂ  K  ‡  O  ·  s  ‚  z  „  º  ‰  s  Â  W  Ê  s  Á  ®  Ë  ò  È  r  Í  ∑  Î  ò  Ï  “  Ì  á  Ó  s  Ô  c    g  Ò  …  Ú  Æ  Û  æ  Ù  ã  ı  ë  ˆ  …  ˜  ø  ¯  ∆  ˘  Õ  ˙  Ö  ˚  ¿  ¸  ı  ˝  Û  ˛  ˝  ˇ  ≈     ¢    Ê    Y        ⁄         Ê          	  M  
+  ˘    I    “    Z            /    ‰    ?    B    @    1    d    1    K    K    j    r    r    t    ë    î     _  !  á  "  â  #  ë  $  å  %  º  &  ›  '  ê  (  ß  )  §  *  §  +  »  ,     -  ‰  .  &  /  „  0  À  1    2  L  3  F  4  @  5  `  6  à  7  â  8  Ä  9  a  :  Â  ;  ˇ  <  	0  =  	5  >  	ù  ?  	R  @  	≠  A  	™  B  	∫  C  
+>  D  
+_  E  
+[  F  !  G  ,  H  x  I    J  Ú  K    L  z  M  ƒ  N    O  F  P    Q    R  Ó  S  »  T  ª  U  ﬂ  V  ”  W  >  X  ∂  Y  å  Z  û  [  ∫  \  ä  ]  ‘  ^  ü  _  [  `  #  a  §  b  t  c    d  A  e    f  ∞  g  „  h  
+ﬁ  i  
+º  j  
+Ñ  k  
+  l  	t  m  	I  n  À  o  ô  p    q  x  r  ~  s  a  t  _  u  Ó  v  Í  w  «  x  !  y  Æ  z  Å  {  l  |  ~  }  J  ~  g    -  Ä  '  Å  0  Ç  Û  É  Ó  Ñ    Ö  ±  Ü  ˚  á  Ÿ  à  -  â     ä  -  ã  Ó  å    ç  ›  é    è    ê  Œ  ë  ≈  í  ¸  ì  µ  î     ï  œ  ñ  ÿ  ó  Ÿ  ò  ó  ô  ¨  ö  	  õ  o  ú  Ã  ù  3  û  é  ü    †  Ã  °  ≠  ¢  ◊  £  ∞  §  ˜  •  ˛  ¶  ‡  ß  Ô  ®  Â  ©  Í  ™  (  ´  œ  ¨    ≠  ı  Æ  B  Ø  :  ∞  B  ±  G  ≤  ^  ≥  =  ¥  N  µ  @  ∂  ;  ∑  %  ∏  s  π  y  ∫  å  ª    º  Æ  Ω  ∞  æ  ˘  ø  Î  ¿  #  ¡  p  ¬  7  √  ï  ƒ  ô  ≈  •  ∆  º  «  À  »  ˚  …  g       À  ]  Ã  {  Õ  j  Œ  £  œ  ö  –  ¿  —  ±  “  ¿  ”  ø  ‘  ´  ’  õ  ÷  ‡  ◊  Æ  ÿ  ï  Ÿ  é  ⁄  Ä  €    ‹  €  ›  ‘  ﬁ  «  ﬂ  Ω  ‡  v  ·    ‚  ≤  „  ⁄  ‰  o  Â  t  Ê  :  Á     Ë  ù  È  Ã  Í  ™  Î  è  Ï  û  Ì  f  Ó  y  Ô  @    ë  Ò  #  Ú  %  Û  Ò  Ù  7  ı  4  ˆ    ˜    ¯  ·  ˘  Ì  ˙    ˚  Ø  ¸  „  ˝  º  ˛  ¥  ˇ    	   ﬂ  	  …  	  ñ  	    	  °  	  Â  	  ‰  	  Ø  	  º  		  ≤  	
+  ‰  	  ¸  	  ﬁ  	     	  ∑  	  ›  	  ˆ  	  ·  	  ‰  	  ¢  	  Ù  	  ∫  	  ä  	  ﬂ  	  ‰  	  ı  	  Ω  	    	  Ë  	  Û  	  ›  	  ª  	   π  	!  í  	"  Ï  	#  “  	$  ÷  	%  Ÿ  	&  œ  	'  ∏  	(  Æ  	)  Ê  	*  |  	+  ∫  	,    	-  ÿ  	.  §  	/  ë  	0  ·  	1  î  	2  ü  	3  é  	4  ï  	5  œ  	6  †  	7  π  	8  â  	9    	:  õ  	;  ë  	<  ·  	=  ®  	>  À  	?  Õ  	@  µ  	A    	B  ∆  	C  ú  	D  ƒ  	E  ∫  	F  x  	G  ﬂ  	H  √  	I  —  	J  ’  	K  –  	L  ﬁ  	M  ∏  	N  ¥  	O  Ï  	P  ß  	Q  Ÿ  	R  …  	S  ·  	T  §  	U  ˘  	V  Õ  	W  Ô  	X  ı  	Y  ™  	Z  ò  	[  œ  	\     	]  ˙  	^  €  	_  »  	`  Á  	a  ‡  	b  ó  	c  ∞  	d  ∆  	e  ≥  	f  Ê  	g  Ø  	h     	i    	j  ’  	k  ÷  	l  ÿ  	m  †  	n  ±  	o  ‹  	p  Õ  	q  Í  	r  Ï  	s  ˆ  	t  µ  	u  Ì  	v  ◊  	w    	x  «  	y  Œ  	z  Ø  	{  π  	|  £  	}  ±  	~  ¯  	  ¬  	Ä  ¨  	Å  ª  	Ç  æ  	É  Ó  	Ñ  °  	Ö  Ô  	Ü  ∆  	á  î  	à  ´  	â  Ê  	ä  ∆  	ã  …  	å  ç  	ç  ¸  	é  ˚  	è  ¿  	ê  ¢  	ë  “  	í    	ì  ©  	î  ∞  	ï  Ω  	ñ  û  	ó  ‹  	ò  ∞  	ô  µ  	ö    	õ  ç  	ú  ”  	ù  è  	û  ∫  	ü  Ö  	†  º  	°  º  	¢  “  	£  õ  	§  ñ  	•  ¯  	¶  ´  	ß  Ä  	®  °  	©  †  	™  ¥  	´  q  	¨  ¶  	≠  ‹  	Æ  Ø  	Ø  Ì  	∞  ö  	±  „  	≤  œ  	≥  «  	¥  Ù  	µ  √  	∂  Í  	∑  „  	∏  $  	π  Ó  	∫    	ª  ‹  	º  œ  	Ω  ¯  	æ  ˚  	ø  •  	¿  √  	¡  µ  	¬  Ã  	√  ˘  	ƒ  ≈  	≈  „  	∆  »  	«  ü  	»    	…  æ  	   ‹  	À  ô  	Ã    	Õ  ‘  	Œ  ø  	œ  È  	–  ˇ  	—  „  	“  ò  	”  Â  	‘  —  	’  ˝  	÷  ¿  	◊  3  	ÿ  ı  	Ÿ  0  	⁄  ˆ  	€  È  	‹    	›    	ﬁ  ¨  	ﬂ  Ù  	‡  Ù  	·  M  	‚  ı  	„  ¥  	‰  €  	Â  ı  	Ê    	Á  Ì  	Ë  	  	È    	Í    	Î  *  	Ï  K  	Ì    	Ó    	Ô  „  	  _  	Ò  9  	Ú  '  	Û  =  	Ù  3  	ı  v  	ˆ  S  	˜  O  	¯  w  	˘  å  	˙  x  	˚  G  	¸  ¢  	˝  ÷  	˛  d  	ˇ  â  
+   s  
+  o  
+  ç  
+  ‡  
+  ‚  
+  Ë  
+  ¿  
+  „  
+  †  
+	  Ÿ  
+
+  ‚  
+  ˝  
+  Ó  
+  ˜  
+    
+  …  
+  ˝  
+  ∏  
+  €  
+  È  
+  Î  
+  ∂  
+    
+  ¶  
+  ≥  
+  E  
+  d  
+  ≤  
+  `  
+  R  
+    
+  ó  
+   W  
+!  ˇ  
+"  ˛  
+#    
+$    
+%  ∏  
+&  •  
+'  Õ  
+(  ú  
+)  ∆  
+*  ‘  
++  ¯  
+,  Ó  
+-  †  
+.  ú  
+/  ®  
+0  ›  
+1  y  
+2  ú  
+3  Œ  
+4  ∞  
+5  ¶  
+6  ¢  
+7  “  
+8  —  
+9  —  
+:  ±  
+;  ≠  
+<  ù  
+=  ƒ  
+>  ¥  
+?  Á  
+@  ú  
+A  ¬  
+B  …  
+C  ”  
+D  Â  
+E  π  
+F  Â  
+G  ˘  
+H  ≈  
+I  µ  
+J  œ  
+K  —  
+L  ˘  
+M  ù  
+N  Ò  
+O  ‚  
+P  °  
+Q  •  
+R  ¡  
+S  ˜  
+T  _  
+U  –  
+V  °  
+W  ‹  
+X  ®  
+Y  ∂  
+Z  Æ  
+[  À  
+\  ≥  
+]  ‹  
+^  ´  
+_  ’  
+`  ®  
+a  „  
+b  ﬂ  
+c  ™  
+d  Î  
+e  †  
+f  ®  
+g  ∆  
+h  ‡  
+i  ⁄  
+j  ∑  
+k  ê  
+l  ±  
+m  Ω  
+n  –  
+o  €  
+p  ÷  
+q  ¢  
+r  ¯  
+s  £  
+t  ñ  
+u  r  
+v  º  
+w  ﬁ  
+x  |  
+y  ª  
+z    
+{  ≠  
+|  Í  
+}  Z  
+~  Ó  
+  û  
+Ä  À  
+Å  â  
+Ç    
+É  ¿  
+Ñ  ∑  
+Ö  ß  
+Ü  »  
+á  j  
+à  á  
+â     
+ä  ¶  
+ã  ó  
+å  Ã  
+ç  ¶  
+é  ø  
+è  ¨  
+ê  ¯  
+ë  ÷  
+í  ÿ  
+ì  –  
+î  ˇ  
+ï  µ  
+ñ  ø  
+ó  Ú  
+ò  q  
+ô  ¬  
+ö  ù  
+õ  é  
+ú  î  
+ù  »  
+û  ≠  
+ü  ≤  
+†  õ  
+°  ƒ  
+¢  ≠  
+£  Ã  
+§  ≠  
+•  Ñ  
+¶  ”  
+ß    
+®  †  
+©  ¿  
+™  ì  
+´  ¨  
+¨  M  
+≠  ö  
+Æ  ¬  
+Ø  °  
+∞  ã  
+±  º  
+≤  À  
+≥  ∫  
+¥  ∫  
+µ  Ø  
+∂  l  
+∑  ≤  
+∏  z  
+π  Ÿ  
+∫  •  
+ª  ‹  
+º  ò  
+Ω  ¶  
+æ  X  
+ø  ©  
+¿  µ  
+¡  œ  
+¬  è  
+√  æ  
+ƒ  Œ  
+≈  ß  
+∆  é  
+«  π  
+»  ¶  
+…  §  
+   Ñ  
+À  v  
+Ã  û  
+Õ  ∆  
+Œ  ß  
+œ  º  
+–  ß  
+—  æ  
+“  |  
+”  Õ  
+‘  ¡  
+’  ©  
+÷  √  
+◊  ∂  
+ÿ  °  
+Ÿ  «  
+⁄  c  
+€  ‘  
+‹  Ü  
+›  Î  
+ﬁ  ∞  
+ﬂ  t  
+‡  ï  
+·  ∫  
+‚  Ω  
+„  ª  
+‰  »  
+Â  p  
+Ê  ï  
+Á  ∏  
+Ë  z  
+È  ‘  
+Í  ß  
+Î  ∆  
+Ï  
+  
+Ì  ò  
+Ó  ô  
+Ô  ◊  
+  {  
+Ò  º  
+Ú  ¥  
+Û  m  
+Ù  ‚  
+ı  ú  
+ˆ  ¨  
+˜  s  
+¯  É  
+˘    
+˙  ≈  
+˚  ≠  
+¸  “  
+˝    
+˛  ◊  
+ˇ  ¬     √    œ    ª    ·    u        ¶    §    ª  	  £  
+  ÷    √    µ    «    ◊    W    ⁄    ¨    «    §    ﬁ    ∏        ∞    º    «    ’    £    ê    î    ˇ    ø     ¥  !  ´  "  ä  #  ‚  $  Œ  %  ∑  &  ‰  '    (     )  á  *    +  ¬  ,  ≠  -  ¥  .  ¢  /  Á  0  ´  1  À  2  å  3  §  4  ±  5  î  6  ◊  7  õ  8  «  9  ﬁ  :  ∆  ;     <  µ  =  ∞  >  Ã  ?  …  @  Æ  A  
+  B  ô  C  ú  D  ¬  E  ó  F  ≥  G  Ï  H  ß  I  ’  J  «  K  –  L  ¡  M  ‰  N  ∏  O  ±  P  ‡  Q  ç  R  ∆  S  ∆  T  ±  U  ‚  V  !  W  ß  X  ‹  Y  “  Z  µ  [  ≈  \  Ú  ]  ø  ^  À  _    `  √  a  ∂  b  °  c  Ê  d  ∏  e  ¯  f  Ÿ  g  Ã  h  ñ  i  ﬂ  j  Œ  k  ±  l  Ò  m  ∏  n  ﬂ  o  ˇ  p  ∑  q  œ  r  ‹  s  C  t  –  u  Û  v  Ò  w  —  x  ä  y  »  z  ˙  {    |  ˆ  }  ‚  ~  ◊       Ä    Å  Ë  Ç  ø  É    Ñ    Ö    Ü    á  Ú  à  Ï  â  @  ä  )  ã  8  å    ç  Ì  é    è  [  ê    ë    í  ◊  ì    î    ï    ñ  J  ó  C  ò    ô  9  ö    õ    ú  J  ù  
+  û     ü  F  †  8  °  J  ¢  ]  £    §  $  •  1  ¶  X  ß  8  ®  K  ©  -  ™  w  ´  M  ¨    ≠  n  Æ  c  Ø  !  ∞  S  ±    ≤  2  ≥  ≤  ¥  ·  µ    ∂  Y  ∑  K  ∏  (  π  H  ∫  “  ª    º  ˘  Ω    æ     ø    ¿  Í  ¡  !  ¬    √  ˝  ƒ    ≈  ’  ∆  Ò  «  ”  »  Ó  …  ˆ     "  À  Î  Ã  ﬂ  Õ    Œ    œ  ˙  –    —    “    ”     ‘  Ò  ’  ‚  ÷  ˛  ◊    ÿ  Î  Ÿ  º  ⁄    €  ”  ‹  €  ›  ‚  ﬁ  ﬂ  ﬂ    ‡  ˜  ·     ‚  ◊  „    ‰  ‚  Â  ö  Ê  #  Á  Ò  Ë  ∞  È  Ê  Í  Œ  Î    Ï  Ó  Ì  ﬁ  Ó    Ô  ˙    …  Ò  —  Ú     Û  ”  Ù  ù  ı  §  ˆ  ñ  ˜  ∆  ¯  „  ˘  ∞  ˙  ¯  ˚  ı  ¸  ’  ˝  ≈  ˛  ’  ˇ  Ñ     ·    À    °    ﬂ    œ    ÷    ˙    Û    Õ  	  ⁄  
+  ´    ⁄    û    œ    ≥    ä    ≤    ∫    ∏    –    ◊    Ç    ß    €    “    È    «         Ø    †    ~         Ó  !  ¡  "  ì  #  ’  $     %  ê  &  Ô  '  µ  (  Œ  )  ≠  *  ÿ  +     ,    -  Ù  .    /    0  ≥  1  Á  2  ¿  3    4  ˛  5  Ú  6  ∏  7    8  Ÿ  9  ﬁ  :  ´  ;  ∑  <    =  ˇ  >  …  ?  ¿  @    A  Ÿ  B     C  Û  D  √  E  „  F    G  Á  H  ⁄  I  ∫  J  √  K  À  L  ó  M  “  N  Ã  O    P  ‚  Q  ∞  R    S  »  T  —  U    V  “  W  ‹  X  Ó  Y  ¬  Z  ı  [  &  \  Ì  ]  ™  ^  ‡  _  ÿ  `  ÷  a    b    c  ¬  d  »  e  “  f  Ÿ  g    h  Ø  i  d  j  ‡  k  „  l  Ô  m  °  n  “  o  Ê  p  ƒ  q  ‘  r  ß  s  Ù  t     u  ÿ  v  Œ  w  Ò  x  ¿  y    z    {  ¨  |  ﬁ  }  ∞  ~  ú    ´  Ä  ›  Å  ”  Ç  Ó  É  ˛  Ñ  ◊  Ö  ø  Ü  ¿  á  ‰  à  ‡  â  §  ä  ÷  ã  „  å  –  ç  –  é     è  ◊  ê  ¡  ë  Ÿ  í     ì  %  î  ﬁ  ï  ‰  ñ  ∑  ó  Ê  ò  Ò  ô  ÿ  ö     õ  –  ú  À  ù  ˘  û  ı  ü  Ê  †    °  Õ  ¢    £  Ì  §  Ù  •  Ó  ¶    ß  –  ®  «  ©  √  ™  ‡  ´    ¨  ﬁ  ≠  ⁄  Æ  ∞  Ø  œ  ∞    ±  ˚  ≤  π  ≥  „  ¥  È  µ  „  ∂  ⁄  ∑    ∏  	  π  ˆ  ∫  œ  ª  ’  º    Ω  ⁄  æ  ◊  ø  ®  ¿  ÿ  ¡    ¬  –  √    ƒ  Ò  ≈  œ  ∆    «  ›  »    …  Ï     +  À  Ó  Ã  ≤  Õ  Œ  Œ  ı  œ  9  –  ±  —  Ì  “  ˘  ”  Ú  ‘  Ê  ’  ˜  ÷  √  ◊  Ò  ÿ  Ù  Ÿ    ⁄    €    ‹  ˇ  ›  ¬  ﬁ  Ã  ﬂ  ˆ  ‡    ·  ı  ‚    „  ‰  ‰  ⁄  Â  "  Ê    Á    Ë  Ì  È  ˚  Í  „  Î  
+  Ï  „  Ì  ˆ  Ó  =  Ô  ‘    ˜  Ò    Ú  ¸  Û  ﬂ  Ù    ı    ˆ  e  ˜  (  ¯    ˘  ˆ  ˙  È  ˚  .  ¸  ˛  ˝  Ó  ˛  „  ˇ  ÷     &    ˛    Ë    »    Ÿ         	          	  ˚  
+  ‡    ﬂ    ˙    '            Ê    ı        è    	    "    ˜    Á    &    ˙    ‡    :    5    ¯        É     e  !    "  Ë  #  ˆ  $  1  %    &  Í  '  ¯  (  ‘  )  9  *  E  +  …  ,  Ã  -  ˘  .    /  &  0  √  1    2  
+  3  6  4     5  æ  6  E  7    8  '  9  1  :    ;    <  ı  =  ˝  >    ?  ˙  @    A  ÷  B    C  „  D  ‡  E  0  F  C  G  ¸  H  Ò  I  ¸  J    K  4  L  ˆ  M    N  .  O    P    Q  8  R    S    T  /  U    V    W    X  ∆  Y    Z  ‰  [    \  4  ]  Û  ^  h  _  8  `  [  a    b    c  i  d  e  e  Ú  f    g  ’  h  R  i  0  j  
+  k  Ç  l  G  m  
+  n  =  o  J  p  A  q  L  r  >  s  8  t  ;  u  ;  v    w  =  x  O  y  #  z  C  {  #  |  m  }  9  ~  K    }  Ä  ì  Å  k  Ç  L  É  0  Ñ  &  Ö  4  Ü  4  á  F  à    â    ä  n  ã  E  å  P  ç    é  T  è  o  ê  Å  ë  `  í  ¬  ì  ≥  î  M  ï  0  ñ  m  ó  t  ò  ™  ô  â  ö  i  õ  ∑  ú  ¢  ù  ~  û  ß  ü  Æ  †  ì  °  û  ¢  ò  £  ∫  §  ™  •  È  ¶  ì  ß  ¿  ®    ©  ∏  ™  À  ´  ¥  ¨  ∂  ≠  »  Æ  Ù  Ø    ∞  ”  ±  €  ≤  ·  ≥  ı  ¥     µ  ‡  ∂  "  ∑    ∏  L  π  ô  ∫  ?  ª  +  º    Ω  x  æ  V  ø  a  ¿  é  ¡  _  ¬  ç  √  ù  ƒ  à  ≈  È  ∆  Ë  «  –  »    …       ó  À    Ã  /  Õ  D  Œ  9  œ  .  –  ,  —  @  “  E  ”  ]  ‘  :  ’  à  ÷  g  ◊  k  ÿ  b  Ÿ  á  ⁄  x  €  Ø  ‹  >  ›  ≠  ﬁ  Å  ﬂ  J  ‡  k  ·  q  ‚    „    ‰  /  Â    Ê    Á  ◊  Ë  ›  È     Í     Î  §  Ï  2  Ì  ì  Ó  \  Ô      $  Ò  B  Ú  Ë  Û  ˚  Ù  B  ı  …  ˆ  ”  ˜  …  ¯  Ä  ˘  Ã  ˙  y  ˚  q  ¸  ë  ˝  Ç  ˛  _  ˇ  F     d    /    8    k        %    j    ,      	  D  
+  ˜    R         4    B    5    ‚    	    ,        ˙    Ô        ı    Â    —    ,    $        Á        #       !    "    #     $    %    &  Ù  '  –  (  ˘  )    *  Í  +  Ú  ,    -    .  l  /  =  0  Ô  1  2  2  E  3  R  4    5    6  #  7  .  8  /  9  !  :  h  ;  @  <    =  `  >    ?  	  @  a  A  Ú  B  &  C  (  D    E  Q  F  \  G  M  H  '  I  ;  J  1  K  $  L  f  M    N  [  O  >  P  &  Q  5  R  w  S  ^  T  B  U  *  V  s  W  G  X  {  Y  K  Z  6  [  I  \    ]  N  ^  F  _  q  `  Ü  a  S  b  [  c  +  d  I  e  É  f  C  g  ¶  h  A  i  D  j  X  k    l    m  i  n  p  o  A  p     q  t  r  ∞  s  >  t  a  u  I  v  J  w  D  x  ë  y  d  z  π  {  Ä  |  R  }  Ü  ~      l  Ä  $  Å  =  Ç  4  É    Ñ  -  Ö    Ü  _  á  3  à  D  â  '  ä  ˚  ã    å  ˙  ç  Û  é  <  è    ê  c  ë  L  í  y  ì  ,  î  ‰  ï  
+  ñ    ó  3  ò    ô  2  ö  ˛  õ  V  ú  *  ù  "  û    ü  '  †    °  "  ¢    £  1  §  ı  •    ¶    ß  <  ®  .  ©  ˇ  ™  x  ´  ·  ¨  2  ≠  O  Æ  m  Ø  ]  ∞  b  ±  s  ≤  0  ≥  ˛  ¥  B  µ  $  ∂  f  ∑  ?  ∏  ]  π  '  ∫  Z  ª  †  º  :  Ω  r  æ    ø  Ä  ¿  R  ¡  P  ¬  )  √  F  ƒ  F  ≈  l  ∆  .  «  f  »    …  %     *  À  C  Ã  l  Õ  k  Œ  O  œ  G  –  `  —  f  “  ì  ”  î  ‘  y  ’  x  ÷  ¥  ◊  °  ÿ  ^  Ÿ  >  ⁄  ^  €  å  ‹  p  ›  º  ﬁ  Ø  ﬂ  õ  ‡  ?  ·  ï  ‚  ñ  „  ≈  ‰  e  Â  Õ  Ê  ∆  Á  ‡  Ë  ì  È  »  Í  ù  Î  º  Ï  ˛  Ì  ≥  Ó  “  Ô  –    ≤  Ò    Ú  Ω  Û  ±  Ù    ı  ·  ˆ  ‡  ˜    ¯  Ò  ˘  ‹  ˙  ›  ˚    ¸    ˝  ˙  ˛  „  ˇ  ‘     ﬂ    ÿ    ˘    4    8    ˙    3    ‚    ⁄  	  ˝  
+  —    •                ’    Õ    W        Ó    Î    À    ¬    ˚            ∂        œ            Ì       !  ’  "    #  ‡  $    %  ˛  &  \  '  $  (  5  )  \  *  Ñ  +  ë  ,  l  -  r  .  Ç  /  Ä  0  s  1  q  2  ¡  3  ∆  4  |  5     6  Â  7  ñ  8  £  9  Ω  :  v  ;  i  <  k  =  ù  >  í  ?  —  @  Ñ  A  x  B  |  C  á  D  0  E  Ç  F  T  G    H    I  c  J  ›  K    L  Ï  M  †  N  ”  O  ‘  P  ƒ  Q  ∑  R  †  S  ¥  T  Ö  U  t  V  ß  W  Ö  X  á  Y    Z  Ç  [  H  \  3  ]  ?  ^  +  _  S  `  L  a  (  b    c  
+  d  Ó  e    f  1  g  Ú  h    i  Œ  j  Ë  k  6  l  Í  m  Í  n  Ò  o  :  p  ﬂ  q  ‡  r    s  ‡  t  æ  u  €  v  ›  w    x  ¿  y  —  z  ”  {  ≈  |  ·  }  æ  ~  ¬    ‘  Ä  Û  Å    Ç  ≈  É    Ñ  Ã  Ö  ø  Ü  ﬁ  á  ¿  à  ◊  â  …  ä  Í  ã  Ç  å  ﬁ  ç  ì  é  ≈  è  ”  ê  ©  ë  Ÿ  í  Ì  ì     î  Ì  ï  ö  ñ  ”  ó  í  ò  ‡  ô  ‘  ö  –  õ  Ê  ú  “  ù  ´  û  µ  ü  ∂  †  ◊  °  —  ¢  ©  £  ç  §  ë  •  Ø  ¶  «  ß  ‘  ®  ⁄  ©  ˘  ™  ¿  ´  æ  ¨  æ  ≠  √  Æ  ÷  Ø  ñ  ∞  Û  ±  ì  ≤  ‘  ≥     ¥  ¡  µ  ó  ∂  ¨  ∑  ∂  ∏  ˝  π  ±  ∫  À  ª  ß  º  ƒ  Ω  ®  æ  ª  ø  à  ¿  Ç  ¡  ¨  ¬  Ø  √  ™  ƒ  »  ≈  ∞  ∆  Ï  «  –  »  π  …       ≤  À  Ñ  Ã  ´  Õ  µ  Œ  ü  œ  ≠  –     —  ∑  “  }  ”  Á  ‘  ú  ’  c  ÷  ¶  ◊  Ã  ÿ  ö  Ÿ  œ  ⁄  ≤  €  …  ‹  â  ›  Ç  ﬁ  c  ﬂ  ·  ‡  Â  ·  Œ  ‚  ·  „  6  ‰  r  Â  R  Ê  '  Á  H  Ë  =  È  Å  Í  P  Î  6  Ï  D  Ì  Ü  Ó  /  Ô   ¨       Ò     Ú     Û     Ù     ı     ˆ     ˜      ¯      ˘     ˙     ˚     ¸      ˝     ˛      ˇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

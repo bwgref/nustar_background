@@ -113,3 +113,18 @@ close $fptr2
 close $fptr3
 
 
+data 1:1 year6_det3_FPMA.pha
+response  2:1 diag.rmf
+ignore *:1-2460,3710-4096
+fit 1000
+
+error 1
+error 4
+error 7
+tclout param 1;  scan $xspec_tclout "%f" e1; tclout error 1 ; puts $fptr1 "$e1 $xspec_tclout"
+tclout param 4; scan $xspec_tclout "%f" e1; tclout error 4 ; puts $fptr2 "$e1 $xspec_tclout"
+tclout param 7; scan $xspec_tclout "%f" e1; tclout error 7 ; puts $fptr3 "$e1 $xspec_tclout"
+
+close $fptr1
+close $fptr2
+close $fptr3
