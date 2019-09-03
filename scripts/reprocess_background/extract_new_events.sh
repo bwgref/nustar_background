@@ -9,3 +9,4 @@ ${IDL_LOC}/idl -quiet setup_links_nucalcpi.bat > updates.log
 ${IDL_LOC}/idl -quiet run_nucalcpi.bat >> updates.log
 ${IDL_LOC}/idl -quiet run_extract_events.bat >> updates.log
 
+./push_slack.sh updates.log >> /dev/null
