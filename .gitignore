@@ -3,9 +3,13 @@ full_mission/*
 full_mission
 full_mission_shields/*
 full_mission_shields
+scripts/full_mission
+scripts/reprocess_background/*tar
 scripts/extract_background/full_mission
+notebooks/ground_maps/*png
 
 *.tgz
+*tar
 *checkpoint*
 *~
 
