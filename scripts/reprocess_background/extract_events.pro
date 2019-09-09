@@ -9,7 +9,8 @@ ab = ['A', 'B']
 ev_stub = {TIME:-999d, DET_ID:-1, PHAS:fltarr(9), RAWX:-1, RAWY:-1, $
            DEPTHFLAG:0, GRADE:0, GEOMAG:-999., SUNSHINE:-1, $
            ram_angle:-999., lat:-999., lon:-999., alt:-999., $
-           limb_angle:-999., SURRPI:0., TEMP:-10., PI:-999}
+           limb_angle:-999., SURRPI:0., TEMP:-10., PI:-999, $
+           STATUS:0B}
 
 ; Depth cut flag for status cut below
 depth_cut=128B
@@ -85,7 +86,8 @@ FOR iab = 0, 1 DO BEGIN
    new_evt.phas = evt.phas
    new_evt.surrpi = evt.surrpi
    new_evt.pi = evt.pi
-   
+   new_evt.status = evt.status[1]
+
 ;;    IF nevt GT 1000 THEN stop
 
    ; Get the info you want from the attorb file:

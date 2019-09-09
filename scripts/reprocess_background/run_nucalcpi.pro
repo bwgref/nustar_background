@@ -24,7 +24,6 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
 
    print, 'Running: '+seqid
    spawn, './run_nucalcpi.sh '+seqid
-
 ENDFOR
 
 
