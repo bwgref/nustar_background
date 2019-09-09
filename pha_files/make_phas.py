@@ -1,9 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import glob
 from astropy.io.fits import getdata, getheader, writeto, append, setval
 
-def write_spec(outspec, exp, outname='draft.pha', det_id=det_id, mod='A'):
+def write_spec(outspec, exp, outname='draft.pha', det_id='det0', mod='A'):
     # Read the template
     null, hdr = getdata('nu30001039002_srcA_sr.pha', 0, header=True)
     writeto(outname, null, header=hdr, overwrite=True)
@@ -35,7 +34,7 @@ def load_data():
     for ind, evtdir in enumerate(glob.glob('../scripts/reprocess_background/full_mission/*/')):
         for mod in ['A', 'B']:
             for file in glob.glob('{}/*{}_02.fits'.format(evtdir, mod)):
-                
+                print(file)
             # Skip these high background obsids
                 if file.find("40101012") != -1:
                     continue
@@ -65,7 +64,7 @@ def load_data():
                         data_table[mod][det_key][e_key]['exp'] = 0.
 
                     filter = ( (evdata['GRADE']==0) & (evdata['DET_ID']==det_id) & (evdata['LIMB_ANGLE'] < -2) & 
-                         evdata['DEPTHFLAG']==0)
+                         evdata['DEPTHFLAG']==0 & (evdata['STATUS'] == 0))
                 
                     inds = filter.nonzero()
 
