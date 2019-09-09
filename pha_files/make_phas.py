@@ -11,7 +11,7 @@ def write_spec(outspec, exp, outname='draft.pha', det_id='det0', mod='A'):
     hdr['RESPFILE'] = '{}{}.rmf'.format(det_id, mod)
     hdr['BACKFILE'] = ''
     hdr['ANCRFILE'] = ''
-    hdr['EXPOSURE'] = 1.0
+    hdr['EXPOSURE'] = exp
     append(outname, spec, hdr)
 
 
@@ -45,11 +45,10 @@ def load_data():
                 hdr= getheader(file, 1)
                 epoch = np.float(hdr['TSTART'])
                 dt_years = (epoch-launch_met) / 3.154e7 # years
-                dt_quarter = dt_years * 4
+                dt_quarter = dt_years
             # Change to per-quarter instead
                 epoch_ind = np.int(np.floor(dt_quarter))
 
-                                
  
                 e_key = 'epoch{}'.format(epoch_ind)
 
@@ -63,10 +62,12 @@ def load_data():
                         data_table[mod][det_key][e_key]['spec'] = np.zeros([4096])
                         data_table[mod][det_key][e_key]['exp'] = 0.
 
-                    filter = ( (evdata['GRADE']==0) & (evdata['DET_ID']==det_id) & (evdata['LIMB_ANGLE'] < -2) & 
-                         evdata['DEPTHFLAG']==0 & (evdata['STATUS'] == 0))
+                    good_filter = ( (evdata['GRADE']==0) &
+                               (evdata['DET_ID']==det_id) &
+                               (evdata['LIMB_ANGLE'] < -2) & 
+                               (evdata['STATUS']==0) )
                 
-                    inds = filter.nonzero()
+                    inds = good_filter.nonzero()
 
                     ehist, edges = np.histogram(evdata['PI'][inds[0]], range = [0, 4096],
                                        bins=4096)
