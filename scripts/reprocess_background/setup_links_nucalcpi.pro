@@ -50,7 +50,6 @@ FOR i = 0, n_elements(socn) - 1 DO BEGIN
    ENDIF
 
    
-  
 ENDFOR
 
 

@@ -35,8 +35,7 @@ do
 
     cmd="nuscreen obsmode=OCCULTATION \
      infile=$outfile \
-     gtiscreen=yes evtscreen=yes gtiexpr=DEFAULT \
-     gradeexpr=DEFAULT statusexpr=none \
+     gtiscreen=yes evtscreen=no gtiexpr=DEFAULT \
      createattgti=yes \
      createinstrgti=yes \
      outdir=$OUTDIR \
@@ -45,10 +44,6 @@ do
      cleancols=no \
      outfile=DEFAULT clobber=yes"
 
-    echo $cmd
-    $cmd >> $logfile 2>&1
-
-    cmd="nulivetime infile=$clfile hkfile=$hkfile outfile=NONE"
     echo $cmd
     $cmd >> $logfile 2>&1
 

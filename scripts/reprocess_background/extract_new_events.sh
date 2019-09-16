@@ -7,6 +7,5 @@ IDL_LOC=/usr/local/rsi/idl71/bin
 
 ${IDL_LOC}/idl -quiet setup_links_nucalcpi.bat > updates.log
 ${IDL_LOC}/idl -quiet run_nucalcpi.bat >> updates.log
-${IDL_LOC}/idl -quiet run_extract_events.bat >> updates.log
-
-./push_slack.sh updates.log >> /dev/null
+#${IDL_LOC}/idl -quiet run_extract_events.bat >> updates.log
+#./push_slack.sh updates.log >> /dev/null
