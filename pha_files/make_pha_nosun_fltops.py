@@ -35,7 +35,7 @@ def load_data_clean(evtdirs, maxload=False):
                                         'exp':0.}
     
     for ind, evtdir in enumerate(evtdirs):
-        for mod in ['A', 'B']:
+        for mod in ['B']:
 
             seqid = basename(normpath(evtdir))
             
@@ -44,7 +44,7 @@ def load_data_clean(evtdirs, maxload=False):
 
             
 
-            for file in glob.glob('{}/*{}02_cl.evt'.format(evtdir, mod)):
+            for file in glob.glob('{}/*{}02_cl.evt'.format(evtdir+'/'+seqid+'/event_cl', mod)):
             # Skip these high background obsids
                 if file.find("40101012") != -1:
                     continue
@@ -56,12 +56,12 @@ def load_data_clean(evtdirs, maxload=False):
 
                 evdata = getdata(file, 1)
                 ev_elv = np.interp(evdata['TIME'],attorb['TIME'], attorb['ELV'])
-                
+                ev_sunshine = np.interp(evdata['TIME'],attorb['TIME'], attorb['SUNSHINE'])
+
                 for det_id in range(4):
                     det_key = 'det{}'.format(det_id)
  
                     elec_filter = ~ ( \
-                                (evdata['STATUS'][:, 10]) | \
                                 (evdata['STATUS'][:, 8]) | \
                                 (evdata['STATUS'][:, 7]) | \
                                 (evdata['STATUS'][:, 6]) | \
@@ -71,7 +71,7 @@ def load_data_clean(evtdirs, maxload=False):
                     evt_filter = (elec_filter) & \
                         (evdata['DET_ID'] == det_id) & \
                         (evdata['GRADE'] == 0) & \
-                        (ev_elv < -1)
+                        (ev_elv < -1) & (ev_sunshine == 0)
 
                     good_inds = np.where(evt_filter)[0]
                     ehist, edges = np.histogram(evdata['PI'][good_inds],
@@ -100,10 +100,12 @@ for epoch_file in sorted(glob.glob('epoch*_list.txt')):
 
     for mod in dtab:
         for det_id in dtab[mod]:
-            outname='{}_{}_FPM{}_repro.pha'.format(epoch, det_id, mod)
+            outname='{}_{}_FPM{}_repro_nosun_fltops.pha'.format(epoch, det_id, mod)
             print(outname)
             write_spec(dtab[mod][det_id]['spec'], 
-                       dtab[mod][det_id]['exp'], det_id = det_id, outname=outname)
+                       dtab[mod][det_id]['exp'],
+                       det_id = det_id, mod = mod,
+                       outname=outname)
 
-
+    break
     
