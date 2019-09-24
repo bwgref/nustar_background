@@ -1,0 +1,80 @@
+statistic cstat
+statistic test ad
+parallel leven 8
+parallel error 8
+
+response 2:1 diag.rmf
+
+    model  2:cont bknpow
+      0.       -0.01         -3         -2          9         10
+      124. -0.1  105 105 130 130
+      0. -0.1
+    0.000205908       0.01          0          0      1e+20      1e+24
+
+ignore *:0.-160.
+ignore *:164.-**
+
+fit 100
+notice *:95.-164.
+pl ld
+
+mo gauss
+143.6 0.1 140 140 145 145 
+0.1 0.01 0. 0. 1. 1.
+1e-3 1e-5 0. 0. 1 1 
+
+fit 100
+pl ld rat
+
+addcomp 2 gauss
+157.0 0.1 155 155 160 160
+0.1 -0.1 0. 0. 1. 1
+1e-3 1e-5 0. 0. 1. 1. 
+addcomp 3 gauss
+157.6 0.1 155 155 160 160
+0.1 -0.1 0. 0. 1. 1
+1e-3 1e-5 0. 0. 1. 1. 
+
+fit 
+
+pl ld rat
+
+
+addcomp 2 gauss
+149 0.1 148 148 150 150
+0.1 0.01 0. 0. 1. 1. 
+1e-4 1e-5 0. 0. 1. 1. 
+
+fit 1000
+
+pl ld rat
+
+addcomp 1 gauss
+105.4 0.1 104 104 106 106
+0.1 -0.01 0. 0. 1. 1. 
+1e-3 1e-5 0. 0. 1 1 
+
+fit 1000
+pl
+thaw 11 14
+
+fit 1000
+pl
+
+thaw cont:2-3
+fit 1000
+
+addcomp 2 gauss
+121 0.1 119 119 122 122
+0.1 0.1 0. 0. 2. 2. 
+1e-4 1e-5 0. 0. 1e-2 1e-2 
+
+fit 1000
+pl
+
+setplot com re y1 1e-5 2e-3
+setplot rebin 20 100
+setplot add
+pl
+
+setplot delete all

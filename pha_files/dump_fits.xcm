@@ -1,0 +1,23 @@
+error 1
+pl 
+parallel walkers 8
+chain length 40000
+chain walkers 20
+chain burn 10000
+chain run chain_gain.fits
+
+error 1
+error 7
+
+tclout param 1; scan $xspec_tclout "%f" e105
+tclout error 1 ; scan $xspec_tclout "%f %f" e105_loerr e105_higherr
+
+tclout param 7; scan $xspec_tclout "%f" e144
+tclout error 7 ; scan $xspec_tclout "%f %f" e144_loerr e144_higherr
+
+
+margin 1 104.0 106. 100 7 143. 145. 100
+setplot delete all
+pl integprob
+
+puts "$e105 $e105_loerr $e105_higherr $e144 $e144_loerr $e144_higherr"
