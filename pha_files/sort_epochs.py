@@ -22,7 +22,7 @@ def sort_seqid():
             hdr= getheader(file, 1)
             epoch = np.float(hdr['TSTART'])
             dt_years = (epoch-launch_met) / 3.154e7 # years
-            dt_quarter = dt_years
+            dt_quarter = dt_years * 2.
             epoch_ind = np.int(np.floor(dt_quarter))
 
             e_key = 'epoch{}'.format(epoch_ind)
