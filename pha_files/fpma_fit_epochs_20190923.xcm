@@ -5,7 +5,7 @@ query yes
 parallel error 8
 parallel leven 8
 
-cpd /xw
+#cpd /xw
 ignore *:1-2460,3710-4096
 
 setplot rebin 25 25
@@ -20,15 +20,15 @@ systematic 0
 
 renorm
 setplot add
-pl
+#pl
 
 
-for {set det 1} {$det < 2} {incr det} {
+for {set det 0} {$det < 4} {incr det} {
     set outfile "fpma_det${det}_lines_repro_epochs_mcmc.txt"
     set fptrlines [open $outfile w+] 
 
    
-    for {set i 0} {$i < 8} {incr i} {
+    for {set i 0} {$i < 14} {incr i} {
      
           
         set datfile "epoch${i}_det${det}_FPMA_repro.pha"

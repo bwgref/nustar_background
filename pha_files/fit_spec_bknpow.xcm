@@ -16,7 +16,7 @@ ignore *:164.-**
 
 fit 100
 notice *:95.-164.
-pl ld
+#pl ld
 
 mo gauss
 143.6 0.1 140 140 145 145 
@@ -24,7 +24,7 @@ mo gauss
 1e-3 1e-5 0. 0. 1 1 
 
 fit 100
-pl ld rat
+#pl ld rat
 
 addcomp 2 gauss
 157.0 0.1 155 155 160 160
@@ -37,7 +37,7 @@ addcomp 3 gauss
 
 fit 
 
-pl ld rat
+#pl ld rat
 
 
 addcomp 2 gauss
@@ -47,7 +47,7 @@ addcomp 2 gauss
 
 fit 1000
 
-pl ld rat
+#pl ld rat
 
 addcomp 1 gauss
 105.4 0.1 104 104 106 106
@@ -55,11 +55,11 @@ addcomp 1 gauss
 1e-3 1e-5 0. 0. 1 1 
 
 fit 1000
-pl
+#pl
 thaw 11 14
 
 fit 1000
-pl
+#pl
 
 thaw cont:2-3
 fit 1000
@@ -70,11 +70,10 @@ addcomp 2 gauss
 1e-4 1e-5 0. 0. 1e-2 1e-2 
 
 fit 1000
-pl
+#pl
 
 setplot com re y1 1e-5 2e-3
 setplot rebin 20 100
 setplot add
-pl
-
-setplot delete all
+#pl
+#setplot delete all

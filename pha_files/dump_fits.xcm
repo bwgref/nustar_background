@@ -1,5 +1,5 @@
 error 1
-pl 
+#pl 
 parallel walkers 8
 chain length 40000
 chain walkers 20
@@ -18,6 +18,6 @@ tclout error 7 ; scan $xspec_tclout "%f %f" e144_loerr e144_higherr
 
 margin 1 104.0 106. 100 7 143. 145. 100
 setplot delete all
-pl integprob
+#pl integprob
 
 puts "$e105 $e105_loerr $e105_higherr $e144 $e144_loerr $e144_higherr"
