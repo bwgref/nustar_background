@@ -67,15 +67,35 @@ def load_data_clean(evtdirs, maxload=False):
 
                     good_inds = np.where(evt_filter)[0]
 
-                    depth_im, xedges, yedges = np.histogram2d(evdata['PI'][evt_filter], evdata['SURRPI'][evt_filter],
-                                                            bins = [100, 50], range = [[0, 4096], [-500, 100]])
+                    depth_im, xedges, yedges = np.histogram2d(evdata['PI'][good_inds], evdata['SURRPI'][good_inds],
+                                                            bins = [200, 100], range = [[0, 4096], [-1000, 100]])
+
+
+                    elec_filter = ~ ( \
+                                      (evdata['STATUS'][:, 10]) | \
+                                      (evdata['STATUS'][:, 7]) | \
+                                      (evdata['STATUS'][:, 6]) | \
+                                      (evdata['STATUS'][:, 5]) | \
+                                      (evdata['STATUS'][:, 4]) ) 
+
+                    evt_filter = (elec_filter) & \
+                        (evdata['DET_ID'] == det_id) & \
+                        (ev_elv < -1) & (evdata['STATUS'][:, 8])
+
+                    good_inds = np.where(evt_filter)[0]
+                    
+                    depth_im_flagged, xedges, yedges = np.histogram2d(evdata['PI'][good_inds], evdata['SURRPI'][good_inds],
+                                                            bins = [200, 100], range = [[0, 4096], [-1000, 100]])
+
 
                     if 'depth_im' not in data_table[mod][det_key]:
                         data_table[mod][det_key]['depth_im'] = depth_im
+                        data_table[mod][det_key]['depth_im_flaged'] = depth_im_flagged
                         data_table[mod][det_key]['pi_edges'] = xedges
                         data_table[mod][det_key]['surrpi_edges'] = yedges
                     else:
                         data_table[mod][det_key]['depth_im'] += depth_im
+                        data_table[mod][det_key]['depth_im_flaged'] += depth_im_flagged
 
                     data_table[mod][det_key]['exp'] +=np.float(hdr['EXPOSURE'])
 
@@ -96,7 +116,7 @@ for epoch_file in sorted(glob.glob('epoch*_list.txt')):
 
 
     evtdirs = np.loadtxt(epoch_file, dtype='str')
-    dtab = load_data_clean(evtdirs, maxload=20)
+    dtab = load_data_clean(evtdirs)
 
     outname='{}_depth.pkl'.format(epoch)
     pickle_out = open(outname,"wb")
