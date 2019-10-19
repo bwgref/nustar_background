@@ -434,8 +434,23 @@
             Base fit
         
         - Epoch 9
+            Base fit
             
+        - Epoch 10
+            Base fit
+		
+		- Epoch 11
+		    Base fit
+		
+		- Epoch 12
+		    Ratty spectra...
+		    Base fit
+        	
+        - Epoch 13
+            Base fit
         
+        - Epoch 14
+            Base fit
             
         
         
