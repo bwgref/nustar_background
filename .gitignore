@@ -6,6 +6,9 @@ full_mission_shields
 scripts/full_mission
 scripts/reprocess_background/*tar
 scripts/extract_background/full_mission
+scripts/newgain_background
+scripts/caldbgain_background
+
 notebooks/ground_maps/*png
 
 *.tgz
