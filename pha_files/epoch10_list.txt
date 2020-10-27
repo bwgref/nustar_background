@@ -318,6 +318,7 @@
 ../scripts/reprocess_background/full_mission/90313015001/
 ../scripts/reprocess_background/full_mission/80201050004/
 ../scripts/reprocess_background/full_mission/30302018003/
+../scripts/reprocess_background/full_mission/60301027001/
 ../scripts/reprocess_background/full_mission/90301618004/
 ../scripts/reprocess_background/full_mission/60301011004/
 ../scripts/reprocess_background/full_mission/60366002002/
